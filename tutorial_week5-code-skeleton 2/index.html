@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="tutorial5.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="tutorial5.js"></script>
+</head>
+<body>
+    <h1></h1>
+    <div id="div_page_desc">
+        <p></p>
+    </div>
+    <div id="div_visuals">
+        <h3 align ="center">Calgary Crime Map (2018)</h3>
+        <svg id="vis1" class="svg_boxes"></svg>
+        <h3 align ="center">Calgary Crime Map (Initially 2018)</h3>
+        <svg id="vis2" class="svg_boxes"></svg>
+        <div id="div_buttons">
+                <button id="button_education_years" onclick="setupVis2('b')">2017</button>
+                <button id="button_education_years" onclick="setupVis2('c')">2016</button>
+                <button id="button_education_years" onclick="setupVis2('d')">2015</button>
+                <button id="button_education_years" onclick="setupVis2('e')">2014</button>
+                <button id="button_education_years" onclick="setupVis2('f')">2013</button>
+        </div>
+        <h3>Crime Map Community focus(Capitol Hill) </h3>
+        <svg id="vis3" class="svg_boxes"></svg>
+    </div>
+</body>
+</html>
