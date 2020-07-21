@@ -32,10 +32,6 @@ const MARGIN =270;
 
 
 function v2(t) {
-
-
-
-
     let xScale = d3.scaleLinear()
         .domain([0, d3.max(_data, function (d) {
             return d.x;
@@ -385,28 +381,6 @@ function v2(t) {
                 .style("text-anchor", "end")
                 .style("font-weight", "bold")
                 .text(function(d) { return d;});
-
-
-            //svg.selectAll("text.v")
-              //  .data(_data)
-                //.enter()
-                //.append("text")
-               // .text(function(d) {
-                 //   return d[t];});
-
-            //})
-            //.attr("x", function(d) {
-            //  return xScale(d.x);
-            //})
-            //.attr("y", function(d) {
-            //  return yScale(d.y)+PAD;
-            //})
-            //.attr("font-family", "sans-serif")
-            //.attr("font-size", "11px")
-            //.attr("fill", "black")
-            //.style("text-anchor", "start")
-            //.style("alignment-baseline", "middle")
-            //.style("font-weight", "bold");
         }
 
 
@@ -447,33 +421,7 @@ function v3(t,sec) {
 
     svg2.selectAll("circle").remove();
     svg2.selectAll("text").remove();
-    /*
-
-    var c =  svg.selectAll(".c")
-        .data(_data)
-        .enter()
-        .append("g")
-        .filter(function(d){ return d.s=="W"; })
-        .attr("class","c");
-
-    c.append("circle")
-        .attr("cx", 1600)
-        .attr("cy", 1000)
-        .attr("r", function (d) {
-            return sizeScale(d.a);  // call our sizeScale function to map values from d.r
-        })
-        .style("fill", colorScale(d.s));
-
-
-    c.append("text")
-        .attr("x", 1650)
-        .attr("y", 1100)
-        .attr("dy", ".35em")
-        .attr("font-size", "25px")
-        .style("text-anchor", "end")
-        .text(function(d) { return d.C });
-
-*/
+ 
     svg2.selectAll("circle")
         .data(_data)
         .enter()
