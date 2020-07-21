@@ -32,13 +32,13 @@ const MARGIN =270;
 
 function v2(t) {
     let xScale = d3.scaleLinear()
-        .domain([0, d3.max(_data, function (d) {
+        .domain([0, d3.max(_data, function (csv_data) {
             return csv_data.x;
         })])
         .range([MARGIN, WIDTH - MARGIN]);
 
     let yScale = d3.scaleLinear()
-        .domain([0, d3.max(_data, function (d) {
+        .domain([0, d3.max(_data, function (csv_data) {
             return csv_data.y;
         })])
         .range([MARGIN, HEIGHT - MARGIN]);
@@ -47,8 +47,8 @@ function v2(t) {
     // which we will use to resize the radii of our circle data points
     let sizeScale = d3.scalePow()
         .exponent(2)
-        .domain([0, d3.max(_data, function (d) {
-            return d[t];
+        .domain([0, d3.max(_data, function (csv_data) {
+            return csv_data[t];
         })])
         .range([5, 40]); // 0 to 50 pixels
 
@@ -62,7 +62,7 @@ function v2(t) {
         .attr('width', WIDTH)
         .attr('height', HEIGHT);
 
-    function check(d){
+    function check(csv_data){
         if(t== 'a') {
             return   myh3.innerText = "CALGARY CRIME (2013)";
         } else if(t=='b') {
@@ -87,20 +87,20 @@ function v2(t) {
         .data(_data)
         .enter()
         .append("circle")
-        .attr("cx", function (d) {
+        .attr("cx", function (csv_data) {
             return xScale(csv_data.x);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function (csv_data) {
             return yScale(csv_data.y);
         })
-        .attr("r", function (d) {
+        .attr("r", function (csv_data) {
 
-            return sizeScale(d[t]);  // call our sizeScale function to map values from csv_data.r
+            return sizeScale(csv_data[t]);  // call our sizeScale function to map values from csv_data.r
         })
         .call(d3.zoom().on("zoom", function () {
            svg.attr("transform", d3.event.transform)
         }))
-        .on("mouseover", function (d) {
+        .on("mouseover", function (csv_data) {
 
             console.log(csv_data.C);
 
@@ -120,12 +120,12 @@ function v2(t) {
                 .attr("class","c");
 
             c.append("circle")
-                  .filter(function (d) {
+                  .filter(function (csv_data) {
                       return csv_data.C==cc;
                   })
                   .attr("cx", 1600)
                   .attr("cy", 1300)
-                  .attr("r", function (d) {
+                  .attr("r", function (csv) {
                       return sizeScale(csv_data.a);  // call our sizeScale function to map values from csv_data.r
                   })
                 .style("fill", colorScale(csv_data.s));
@@ -137,7 +137,7 @@ function v2(t) {
                  .attr("dy", ".35em")
                  .attr("font-size", "25px")
                  .style("text-anchor", "end")
-                 .text(function(d) { return ca });
+                 .text(function(csv_data) { return ca });
 
             c.append("text")
                 .attr("x", 1750)
@@ -146,7 +146,7 @@ function v2(t) {
                 .attr("font-size", "50px")
                 .style("text-anchor", "end")
                 .style("font-weight", "bold")
-                .text(function(d) { return cc });
+                .text(function(csv_data) { return cc });
 
             c.append("text")
                 .attr("x", 1400)
@@ -163,7 +163,7 @@ function v2(t) {
                    .attr("class","c1");
 
                  c1.append("circle")
-                   .filter(function(d){ return csv_data.C==cc; })
+                   .filter(function(csv_data){ return csv_data.C==cc; })
                    .attr("class","c1")
                    .attr("cx",1700)
                    .attr("cy",1200)
@@ -177,7 +177,7 @@ function v2(t) {
                 .attr("dy", ".35em")
                 .attr("font-size", "25px")
                 .style("text-anchor", "end")
-                .text(function(d) { return cb });
+                .text(function(csv_data) { return cb });
 
             c1.append("text")
                 .attr("x", 1400)
@@ -185,7 +185,7 @@ function v2(t) {
                 .attr("dy", ".35em")
                 .attr("font-size", "25px")
                 .style("text-anchor", "end")
-                .text(function(d) { return "2014" });
+                .text(function(csv_data) { return "2014" });
 
                var c2 = svg.selectAll(".c2")
                    .data(_data)
@@ -194,11 +194,11 @@ function v2(t) {
                    .attr("class","c2");
 
                    c2.append("circle")
-                   .filter(function(d){ return csv_data.C==cc; })
+                   .filter(function(csv_data){ return csv_data.C==cc; })
                    .attr("class","c2")
                    .attr("cx",1800)
                    .attr("cy",1100)
-                   .attr("r", function(d){
+                   .attr("r", function(csv_data){
                        return sizeScale(csv_data.c);  // call our sizeScale function to map values from csv_data.r
                    })
                        .style("fill", colorScale(csv_data.s));
@@ -228,11 +228,11 @@ function v2(t) {
 
 
                   c3.append("circle")
-                   .filter(function(d){ return csv_data.C==cc; })
+                   .filter(function(csv_data){ return csv_data.C==cc; })
                    .attr("class","c3")
                    .attr("cx",1900)
                    .attr("cy",1000)
-                   .attr("r", function(d){
+                   .attr("r", function(csv_data){
                        return sizeScale(csv_data.d);  // call our sizeScale function to map values from csv_data.r
                    })
                       .style("fill", colorScale(csv_data.s));
@@ -244,7 +244,7 @@ function v2(t) {
                 .attr("dy", ".35em")
                 .attr("font-size", "25px")
                 .style("text-anchor", "end")
-                .text(function(d) { return cd });
+                .text(function(csv_data) { return cd });
 
             c3.append("text")
                 .attr("x", 1400)
@@ -252,7 +252,7 @@ function v2(t) {
                 .attr("dy", ".35em")
                 .attr("font-size", "25px")
                 .style("text-anchor", "end")
-                .text(function(d) { return "2016" });
+                .text(function(csv_data) { return "2016" });
 
           var c4 =  svg.selectAll(".c4")
                 .data(_data)
@@ -262,11 +262,11 @@ function v2(t) {
 
 
                 c4.append("circle")
-                .filter(function(d){ return csv_data.C==cc; })
+                .filter(function(csv_data){ return csv_data.C==cc; })
                 .attr("class","c4")
                 .attr("cx",2000)
                 .attr("cy",900)
-                .attr("r", function(d){
+                .attr("r", function(csv_data){
                     return sizeScale(csv_data.e);  // call our sizeScale function to map values from csv_data.r
                 })
                     .style("fill", colorScale(csv_data.s));
@@ -284,7 +284,7 @@ function v2(t) {
                 .attr("dy", ".35em")
                 .attr("font-size", "25px")
                 .style("text-anchor", "end")
-                .text(function(d) { return "2017" });
+                .text(function(csv_data) { return "2017" });
 
 
             var c5=  svg.selectAll(".c5")
@@ -294,11 +294,11 @@ function v2(t) {
                 .attr("class","c5");
 
                 c5.append("circle")
-                .filter(function(d){ return csv_data.C==cc; })
+                .filter(function(csv_data){ return csv_data.C==cc; })
                 .attr("class","c5")
                 .attr("cx",2100)
                 .attr("cy",800)
-                .attr("r", function(d){
+                .attr("r", function(csv_data){
                     return sizeScale(csv_data.f);  // call our sizeScale function to map values from csv_data.r
                 })
                     .style("fill", colorScale(csv_data.s));
@@ -308,18 +308,18 @@ function v2(t) {
                 .attr("y", 900)
                 .attr("font-size", "25px")
                 .attr("fill", "black")
-                .text(function(d) { return cf; });
+                .text(function(csv_data) { return cf; });
 
             c5.append("text")
                 .attr("x", 1335)
                 .attr("y", 800)
                 .attr("font-size", "25px")
                 .attr("fill", "black")
-                .text(function(d) { return "2018" })
+                .text(function(csv_data) { return "2018" })
 
 
          })
-         .on("mouseout", function(d) {
+         .on("mouseout", function(csv_data) {
              svg.selectAll(".c").remove();
 
 
@@ -329,7 +329,7 @@ function v2(t) {
              svg.selectAll(".c4").remove();
              svg.selectAll(".c5").remove();
          })
-         .style("fill", function(d){
+         .style("fill", function(csv_data){
              // when passing the month value, D3 will assign a unique
              // colour per unique month value
              // e.g., all "January" values will have a different colour
@@ -342,16 +342,16 @@ function v2(t) {
         .data(_data)
         .enter()
         .append("text")
-        .attr("x", function (d) {
+        .attr("x", function (csv_data) {
             return xScale(csv_data.x);
         })
-        .attr("y", function (d) {
+        .attr("y", function (csv_data) {
             return yScale(csv_data.y);
         })
         .attr("dy", ".35em")
         .attr("font-size", "10px")
         .style("text-anchor", "end")
-        .text(function(d) { return csv_data.C });
+        .text(function(csv_data) { return csv_data.C });
 
 
             // draw legend
@@ -359,7 +359,7 @@ function v2(t) {
                 .data(colorScale.domain())
                 .enter().append("g")
                 .attr("class", "legend")
-                .attr("transform", function(d, i) { return "translate(-400," + i * 60 + ")"; });
+                .attr("transform", function(csv_data, i) { return "translate(-400," + i * 60 + ")"; });
 
 
 
@@ -379,7 +379,7 @@ function v2(t) {
                 .attr("font-size", "25px")
                 .style("text-anchor", "end")
                 .style("font-weight", "bold")
-                .text(function(d) { return d;});
+                .text(function(csv_data) { return csv_data;});
         }
 
 
@@ -388,13 +388,13 @@ function v3(t,sec) {
 
 
     let xScale = d3.scaleLinear()
-        .domain([0, d3.max(_data, function (d) {
+        .domain([0, d3.max(_data, function (csv_data) {
             return csv_data.x;
         })])
         .range([MARGIN, WIDTH - MARGIN]);
 
     let yScale = d3.scaleLinear()
-        .domain([0, d3.max(_data, function (d) {
+        .domain([0, d3.max(_data, function (csv_data) {
             return csv_data.y;
         })])
         .range([MARGIN, HEIGHT - MARGIN]);
@@ -403,7 +403,7 @@ function v3(t,sec) {
     // which we will use to resize the radii of our circle data points
     let sizeScale = d3.scalePow()
         .exponent(2)
-        .domain([0, d3.max(_data, function (d) {
+        .domain([0, d3.max(_data, function (csv_data) {
             return d[t];
         })])
         .range([5, 40]); // 0 to 50 pixels
@@ -425,15 +425,15 @@ function v3(t,sec) {
         .data(_data)
         .enter()
         .append("circle")
-        .filter(function(d){ return csv_data.s==sec; })
-        .attr("cx", function (d) {
+        .filter(function(csv_data){ return csv_data.s==sec; })
+        .attr("cx", function (csv_data) {
             return xScale(csv_data.x);
         })
-        .attr("cy", function (d) {
+        .attr("cy", function (csv_data) {
             return yScale(csv_data.y);
         })
-        .attr("r", function (d) {
-            return sizeScale(d[t]);  // call our sizeScale function to map values from csv_data.r
+        .attr("r", function (csv_data) {
+            return sizeScale(csv_data[t]);  // call our sizeScale function to map values from csv_data.r
         })
         .style("fill", colorScale(sec));
 
@@ -444,8 +444,8 @@ function v3(t,sec) {
             .data(_data)
             .enter()
             .append("text")
-            .filter(function(d){ return csv_data.s==sec; })
-            .attr("x", function (d) {
+            .filter(function(csv_data){ return csv_data.s==sec; })
+            .attr("x", function (csv_data) {
                 return xScale(csv_data.x)})
             .attr("y", function (d) {
                 return yScale(csv_data.y)-10;
@@ -454,7 +454,7 @@ function v3(t,sec) {
             .attr("font-size", "10px")
             .style("text-anchor", "end")
             .style("font-weight", "bold")
-            .text(function(d) { return csv_data.C;})
+            .text(function(csv_data) { return csv_data.C;})
 
 
 
