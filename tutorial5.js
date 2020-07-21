@@ -8,19 +8,18 @@ window.onload = function(){
 var _data;
 
 d3.csv("crimemap.csv").then(function(data) {
-    data.forEach(function(d){
-        d.a=+d.a;
-        d.b=+d.b;
-        d.c=+d.c;
-        d.d=+d.d;
-        d.e=+d.e;
-        d.f=+d.f;
-        d.x=+d.x;
-        d.y=+d.y;
-
+    data.forEach(function(csv_data){
+        csv_data.a=+csv_data.a;
+        csv_data.b=+csv_data.b;
+        csv_data.c=+csv_data.c;
+        csv_data.d=+csv_data.d;
+        csv_data.e=+csv_data.e;
+        csv_data.f=+csv_data.f;
+        csv_data.x=+csv_data.x;
+        csv_data.y=+csv_data.y;
     });
     _data=data;
-    console.log(data[0]);
+    // console.log(data[0]);
 
 });
 
@@ -34,13 +33,13 @@ const MARGIN =270;
 function v2(t) {
     let xScale = d3.scaleLinear()
         .domain([0, d3.max(_data, function (d) {
-            return d.x;
+            return csv_data.x;
         })])
         .range([MARGIN, WIDTH - MARGIN]);
 
     let yScale = d3.scaleLinear()
         .domain([0, d3.max(_data, function (d) {
-            return d.y;
+            return csv_data.y;
         })])
         .range([MARGIN, HEIGHT - MARGIN]);
 
@@ -89,30 +88,30 @@ function v2(t) {
         .enter()
         .append("circle")
         .attr("cx", function (d) {
-            return xScale(d.x);
+            return xScale(csv_data.x);
         })
         .attr("cy", function (d) {
-            return yScale(d.y);
+            return yScale(csv_data.y);
         })
         .attr("r", function (d) {
 
-            return sizeScale(d[t]);  // call our sizeScale function to map values from d.r
+            return sizeScale(d[t]);  // call our sizeScale function to map values from csv_data.r
         })
         .call(d3.zoom().on("zoom", function () {
            svg.attr("transform", d3.event.transform)
         }))
         .on("mouseover", function (d) {
 
-            console.log(d.C);
+            console.log(csv_data.C);
 
 
-            var cc = d.C;
-            var ca = d.a;
-            var cb = d.b;
-            var ccc = d.c;
-            var cd = d.d;
-            var ce = d.e;
-            var cf = d.f;
+            var cc = csv_data.C;
+            var ca = csv_data.a;
+            var cb = csv_data.b;
+            var ccc = csv_data.c;
+            var cd = csv_data.d;
+            var ce = csv_data.e;
+            var cf = csv_data.f;
 
             var c =  svg.selectAll(".c")
                 .data(_data)
@@ -122,14 +121,14 @@ function v2(t) {
 
             c.append("circle")
                   .filter(function (d) {
-                      return d.C==cc;
+                      return csv_data.C==cc;
                   })
                   .attr("cx", 1600)
                   .attr("cy", 1300)
                   .attr("r", function (d) {
-                      return sizeScale(d.a);  // call our sizeScale function to map values from d.r
+                      return sizeScale(csv_data.a);  // call our sizeScale function to map values from csv_data.r
                   })
-                .style("fill", colorScale(d.s));
+                .style("fill", colorScale(csv_data.s));
 
 
             c.append("text")
@@ -164,13 +163,13 @@ function v2(t) {
                    .attr("class","c1");
 
                  c1.append("circle")
-                   .filter(function(d){ return d.C==cc; })
+                   .filter(function(d){ return csv_data.C==cc; })
                    .attr("class","c1")
                    .attr("cx",1700)
                    .attr("cy",1200)
                    .attr("r", function(d){
-                       return sizeScale(d.b);  // call our sizeScale function to map values from d.r
-                   }) .style("fill", colorScale(d.s));
+                       return sizeScale(csv_data.b);  // call our sizeScale function to map values from csv_data.r
+                   }) .style("fill", colorScale(csv_data.s));
 
             c1.append("text")
                 .attr("x", 1750)
@@ -195,14 +194,14 @@ function v2(t) {
                    .attr("class","c2");
 
                    c2.append("circle")
-                   .filter(function(d){ return d.C==cc; })
+                   .filter(function(d){ return csv_data.C==cc; })
                    .attr("class","c2")
                    .attr("cx",1800)
                    .attr("cy",1100)
                    .attr("r", function(d){
-                       return sizeScale(d.c);  // call our sizeScale function to map values from d.r
+                       return sizeScale(csv_data.c);  // call our sizeScale function to map values from csv_data.r
                    })
-                       .style("fill", colorScale(d.s));
+                       .style("fill", colorScale(csv_data.s));
 
             c2.append("text")
                 .attr("x", 1850)
@@ -229,14 +228,14 @@ function v2(t) {
 
 
                   c3.append("circle")
-                   .filter(function(d){ return d.C==cc; })
+                   .filter(function(d){ return csv_data.C==cc; })
                    .attr("class","c3")
                    .attr("cx",1900)
                    .attr("cy",1000)
                    .attr("r", function(d){
-                       return sizeScale(d.d);  // call our sizeScale function to map values from d.r
+                       return sizeScale(csv_data.d);  // call our sizeScale function to map values from csv_data.r
                    })
-                      .style("fill", colorScale(d.s));
+                      .style("fill", colorScale(csv_data.s));
 
 
             c3.append("text")
@@ -263,14 +262,14 @@ function v2(t) {
 
 
                 c4.append("circle")
-                .filter(function(d){ return d.C==cc; })
+                .filter(function(d){ return csv_data.C==cc; })
                 .attr("class","c4")
                 .attr("cx",2000)
                 .attr("cy",900)
                 .attr("r", function(d){
-                    return sizeScale(d.e);  // call our sizeScale function to map values from d.r
+                    return sizeScale(csv_data.e);  // call our sizeScale function to map values from csv_data.r
                 })
-                    .style("fill", colorScale(d.s));
+                    .style("fill", colorScale(csv_data.s));
 
               c4.append("text")
                 .attr("x", 2050)
@@ -295,14 +294,14 @@ function v2(t) {
                 .attr("class","c5");
 
                 c5.append("circle")
-                .filter(function(d){ return d.C==cc; })
+                .filter(function(d){ return csv_data.C==cc; })
                 .attr("class","c5")
                 .attr("cx",2100)
                 .attr("cy",800)
                 .attr("r", function(d){
-                    return sizeScale(d.f);  // call our sizeScale function to map values from d.r
+                    return sizeScale(csv_data.f);  // call our sizeScale function to map values from csv_data.r
                 })
-                    .style("fill", colorScale(d.s));
+                    .style("fill", colorScale(csv_data.s));
 
             c5.append("text")
                 .attr("x", 2100)
@@ -336,7 +335,7 @@ function v2(t) {
              // e.g., all "January" values will have a different colour
              // from "February" values, but all "January" values will be
              // of the same colour
-             return colorScale(d.s);
+             return colorScale(csv_data.s);
          });
 
     svg.selectAll("text")
@@ -344,15 +343,15 @@ function v2(t) {
         .enter()
         .append("text")
         .attr("x", function (d) {
-            return xScale(d.x);
+            return xScale(csv_data.x);
         })
         .attr("y", function (d) {
-            return yScale(d.y);
+            return yScale(csv_data.y);
         })
         .attr("dy", ".35em")
         .attr("font-size", "10px")
         .style("text-anchor", "end")
-        .text(function(d) { return d.C });
+        .text(function(d) { return csv_data.C });
 
 
             // draw legend
@@ -365,7 +364,7 @@ function v2(t) {
 
 
             // draw legend colored rectangles
-            legend.append("circle")
+            legencsv_data.append("circle")
                 .attr("cx", WIDTH +200)
                 .attr("cy", 50)
                 .attr("r",25)
@@ -373,7 +372,7 @@ function v2(t) {
 
 
             // draw legend text
-           legend.append("text")
+           legencsv_data.append("text")
                 .attr("x", WIDTH + 320)
                 .attr("y", 50)
                 .attr("dy", ".35em")
@@ -390,13 +389,13 @@ function v3(t,sec) {
 
     let xScale = d3.scaleLinear()
         .domain([0, d3.max(_data, function (d) {
-            return d.x;
+            return csv_data.x;
         })])
         .range([MARGIN, WIDTH - MARGIN]);
 
     let yScale = d3.scaleLinear()
         .domain([0, d3.max(_data, function (d) {
-            return d.y;
+            return csv_data.y;
         })])
         .range([MARGIN, HEIGHT - MARGIN]);
 
@@ -426,15 +425,15 @@ function v3(t,sec) {
         .data(_data)
         .enter()
         .append("circle")
-        .filter(function(d){ return d.s==sec; })
+        .filter(function(d){ return csv_data.s==sec; })
         .attr("cx", function (d) {
-            return xScale(d.x);
+            return xScale(csv_data.x);
         })
         .attr("cy", function (d) {
-            return yScale(d.y);
+            return yScale(csv_data.y);
         })
         .attr("r", function (d) {
-            return sizeScale(d[t]);  // call our sizeScale function to map values from d.r
+            return sizeScale(d[t]);  // call our sizeScale function to map values from csv_data.r
         })
         .style("fill", colorScale(sec));
 
@@ -445,17 +444,17 @@ function v3(t,sec) {
             .data(_data)
             .enter()
             .append("text")
-            .filter(function(d){ return d.s==sec; })
+            .filter(function(d){ return csv_data.s==sec; })
             .attr("x", function (d) {
-                return xScale(d.x)})
+                return xScale(csv_data.x)})
             .attr("y", function (d) {
-                return yScale(d.y)-10;
+                return yScale(csv_data.y)-10;
             })
             .attr("dy", ".35em")
             .attr("font-size", "10px")
             .style("text-anchor", "end")
             .style("font-weight", "bold")
-            .text(function(d) { return d.C;})
+            .text(function(d) { return csv_data.C;})
 
 
 
