@@ -364,7 +364,7 @@ function v2(t) {
 
 
             // draw legend colored rectangles
-            legencsv_data.append("circle")
+            legend.append("circle")
                 .attr("cx", WIDTH +200)
                 .attr("cy", 50)
                 .attr("r",25)
@@ -372,7 +372,7 @@ function v2(t) {
 
 
             // draw legend text
-           legencsv_data.append("text")
+           legend.append("text")
                 .attr("x", WIDTH + 320)
                 .attr("y", 50)
                 .attr("dy", ".35em")
