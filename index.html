@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="tutorial5.css" />
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script type="text/javascript" src="tutorial5.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="main.css">
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
 </head>
 <body>
-    <h1></h1>
-    <div id="div_page_desc">
-        <p></p>
+
+
+  <div class="card">
+    <div class="text">
+      
+      <p class = "mainheading">
+        Get <span style="color:hsl(277, 64%, 61%);">insights</span> that help your business grow.
+      </p>
+    
+      <p class="mainparagraph">Discover the benefits of data analytics and make better decisions regarding revenue, customer 
+        experience, and overall efficiency.
+      </p>
+      
+        <div class='stats'>
+
+            <div class="stathead">
+              <p><span class="statheading">
+                10k+
+              </span><br>COMPANIES</p> 
+            </div>
+
+            <div class="stathead">
+              <p>
+                <span class="statheading">
+                  314
+                </span><br>TEMPLATES</p>
+            </div>
+
+            <div class="stathead">
+              <p>
+                <span class="statheading">
+                  12M+
+                </span><br> QUERIES</p>
+            </div>
+
+          </div>
+
+        </div>
+
+    <div class="image">
+      <img src = "images/image-header-desktop.jpg">
+    
     </div>
-    <div id="div_visuals">
-        <h3 id="myh3" >Calgary Crime Map\r\n (2018) </h3>
-        <svg id="vis2" class="svg_boxes"></svg>
-        <div id="div_buttons">
-                <button id="button_years" onclick="v2('a')">2013</button>
-                <button id="button_years" onclick="v2('b')">2014</button>
-                <button id="button_years" onclick="v2('c')">2015</button>
-                <button id="button_years" onclick="v2('d')">2016</button>
-                <button id="button_years" onclick="v2('e')">2017</button>
-                <button id="button_years" onclick="v2('f')">2018</button>
+   
 
-
+  </div>
+  
 </body>
 </html>

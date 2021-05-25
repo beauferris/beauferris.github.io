@@ -1,0 +1,89 @@
+
+body{
+    background-color:hsl(233, 47%, 7%);
+    margin: 0;
+    padding: 0;
+}
+
+.mainheading{
+    color: hsl(0, 0%, 100%);
+    font-size: 40px;
+    
+}
+
+.mainparagraph{
+    color: hsla(0, 0%, 100%, 0.75);
+    font-size: 15px;
+    font-weight: 400;
+    padding-right: 50px;
+
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 540px 540px;
+    grid-template-rows: 446px;
+    grid-template-areas: "text image";
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    border-radius: 10px;
+   
+}
+
+.statheading{
+    color:hsl(0, 0%, 100%);
+    font-size: 25px;
+   
+}
+
+.stathead{
+   color: hsla(0, 0%, 100%, 0.6);
+   display: inline-block;
+   font-size: 13px;
+   padding-right: 70px;
+}
+
+.stats{
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    height: 100%;
+    width: 100%;
+    padding-top: 40px;
+    
+   
+}
+.text{
+    grid-area: text;
+    background-color: hsl(244, 38%, 16%);
+    padding-right: 50px;
+    padding-left: 60px;
+    align-content:center;
+}
+
+.image{
+    grid-area: image;
+    height: 100%;
+    width: 100%;
+    background:hsl(277, 64%, 61%);
+   
+
+}
+
+img {
+    object-fit: cover;
+    opacity: 0.4;
+ }
+
+@font-face {
+    font-family:Inter;
+    src: url(https://fonts.google.com/specimen/Inter);
+    
+  }
+
+  @font-face {
+    font-family:Lexend Deca;
+    src: url(https://fonts.google.com/specimen/Lexend+Deca);
+    
+  }
