@@ -7,15 +7,17 @@ body{
 
 .mainheading{
     color: hsl(0, 0%, 100%);
-    font-size: 40px;
-    
+    font-size:2.25rem;
+  
 }
 
 .mainparagraph{
     color: hsla(0, 0%, 100%, 0.75);
-    font-size: 15px;
+    font-size:0.75rem;
     font-weight: 400;
     padding-right: 50px;
+
+
 
 }
 
@@ -29,19 +31,19 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-   
+    font-family: Inter;
 }
 
 .statheading{
     color:hsl(0, 0%, 100%);
-    font-size: 25px;
+    font-size: 1.5rem;
    
 }
 
 .stathead{
    color: hsla(0, 0%, 100%, 0.6);
    display: inline-block;
-   font-size: 13px;
+   font-size: 0.75rem;
    padding-right: 70px;
 }
 
@@ -52,7 +54,7 @@ body{
     height: 100%;
     width: 100%;
     padding-top: 40px;
-    
+    font-family: Lexend Deca;
    
 }
 .text{
