@@ -25,8 +25,8 @@ body{
     grid-template-rows: 446px;
     grid-template-areas: "text image";
     position: absolute;
-    top: 30%;
-    left: 15%;
+    top: 50%;
+    left: 50%;
     border-radius: 10px;
    
 }
