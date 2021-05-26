@@ -11,7 +11,6 @@ function switchTheme(e) {
     }    
 }
 
-
 window.onload = function(){   
     toggleSwitch.addEventListener('change', switchTheme, false);
  }
