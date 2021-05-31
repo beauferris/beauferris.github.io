@@ -1,276 +1,271 @@
-:root {
-  --background: hsl(230, 17%, 14%);
-  --card-background: hsl(228, 28%, 20%);
-  --blue-text: hsl(228, 34%, 66%);
-  --white-text:hsl(0, 0%, 100%);
-  --today-text:#1EB589;
-  --toggle-text:white;
-  --toggle-background:linear-gradient(225deg, #40DB82 0%, #388FE7 98.02%);
-  --toggle-ball:black;
+:root{
+    --fullsliderbar:hsl(174, 77%, 80%);
+    --sliderbackground:hsl(174, 86%, 45%);
+    --discountbackground:hsl(14, 92%, 95%);
+    --discounttext:hsl(15, 100%, 70%);
+    --ctatext:hsl(226, 100%, 87%);
 
+    --pricecomponentbackground: hsl(0, 0%, 100%);
+    --mainbackground:hsl(230, 100%, 99%);
+    --emptysliderbar:hsl(224, 65%, 95%);
+    --togglebackground:hsl(223, 50%, 87%);
+    --text:hsl(225, 20%, 60%);
+    --textandCTAbackground: hsl(227, 35%, 25%);
 }
 
-[data-theme="light"] {
-  --background: hsl(0, 0%, 100%);
-  --card-background: hsl(227, 47%, 96%);
-  --blue-text: hsl(228, 12%, 44%);
-  --white-text:hsl(230, 17%, 14%);
-  --today-text:#1EB589;
-  --toggle-text:black;
-  --toggle-background:linear-gradient(225deg, #40DB82 0%, #388FE7 98.02%);
-  --toggle-ball:white;
-}
+
 
 body{
-  background-color: var(--background);
-}
-
-.dashboard{
-  
-  display: grid;
-  grid-template-columns: repeat(4,255px);
-  grid-template-rows: 100px auto auto;
-  gap: 30px;
-  grid-template-areas:
-  "header header header header"
-  "top top top top"
-  "middle middle middle middle"
-  "bottom bottom bottom bottom";
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-
-  font-family: Inter;
-}
-
-
-
-
-.middle{
-  grid-area: middle;
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
-  color: var(--white-text)
-}
-
-header{
-  grid-area: header;
-  margin-top: 40px;
-}
-
-header .title{
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 34px;
-  /* identical to box height */
-
-  color: var(--white-text);
-}
-
-header .subtitle{
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-  color: #8C98C6;
-}
-
-.dashboardtop{
-  grid-area: top;
-  display: grid;
-  grid-template-columns: repeat(4,255px);
-  grid-template-rows: 216px  ;
-  
-  gap: 30px;
+    padding: 0;
+    margin:0;
+    background-color: var(--mainbackground);
+    font-size:15px;
+    font-family: "Manrope", sans-serif;
+    background: url("/images/bg-pattern.svg") no-repeat 50% center;
 
 
 }
-
-.dashboardbot{
-  grid-area: bottom;
-  display: grid;
-  grid-template-columns: repeat(4,255px);
-  grid-template-rows: 125px 125px ;
-  gap: 30px;
-
-}
- 
 .header{
 
-text-align: center;
-padding: 30px;
-background-color: var(--card-background);
-border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top:15%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    
+}
+
+.circles{
+    position: absolute;
+    left: 50%;
+    top:15%;
+    transform: translate(-50%,-50%);
+}
+
+.title{
+    font-size: 1.6rem;
+    color:var(--textandCTAbackground) ;
+    font-weight: bold;
+}
+
+.subtitle{
+    color: var(--text);
+    font-size: 0.84rem;
+    font-weight: 800;
+}
+
+
+.details{
+    width: 100%;
+    position: absolute;
+    left: 10%;
+    top:70%; 
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 0.7rem;
+    color: var(--text);
+    
+}
+
+
+.details button{
+    position: absolute;
+    left: 50%;
+    top:10%; 
+    border-radius: 100px;
+    background-color: var(--textandCTAbackground);
+    color: var(--ctatext);
+    padding: 0.74rem 2.5rem;
+
+}
+.main{
+    grid-area: card;
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--pricecomponentbackground);
+    box-shadow: -5px 18px 24px rgba(16, 213, 194, 0.6);
+    border-radius: 10px;
+}
+
+.slidecontainer{
+    position: absolute;
+    top: 35%;
+    right:0%;
+    left: 10%;
+    width: 100%;
+}
+
+.price{
+    color: var(--text);
+    position: absolute;
+    top: 10%;
+    right:0%;
+    left: 63%;
+    font-weight: 800;
+  font-size: 0.7rem;
+}
+
+.views{
+    color: var(--text);
+    position: absolute;
+    top: 15%;
+    right:0%;
+    left: 10%;
+    font-weight: 800;
+    font-size: 0.7rem;
+}
+
+.cost{
+    color: var(--textandCTAbackground);
+    font-size: 2.74em;
+    font-weight: 800;
+    
+}
+
+.billing{
+    color: var(--text);
+    position: absolute;
+    top: 50%;
+    right:0%;
+    left: 20%;
+    font-size: 0.7rem;
 
 }
 
 
-.figure{
-  background-color: var(--card-background);
-  border-radius: 5px;
-  padding: 20px;
-  position: relative;
+.maindiscount{
+    color:var(--text);
+    position: absolute;
+    top: 50%;
+    right:0%;
+    left: 43%;
+    font-size: 0.7rem;
 }
 
-.header .followers{
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 56px;
-  line-height: 48px;
-  color: var(--white-text)
+.discount{
+    color: var(--discounttext);
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 100px;
+    background-color: var(--discountbackground);
+    opacity: 0.5;
+    padding: 2px 5px;
+    letter-spacing: -1;
 }
 
-.header .username{
-  margin-bottom: 25px;
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--blue-text)
-}
-
-.header .subheader{
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--blue-text);
-}
-
-.header .today{
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--today-text)
-}
-
-
-.figure .pageviews{
-
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-  color: var(--blue-text)
-}
-
-
-.figure .views{
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 39px;
-  color: var(--white-text);
-  position: absolute;
-  left: 8%;
-  right: 0%;
-  top: 50%;
-  bottom: 0%;
-}
-
-.figure .percent{
-  font-family: "Inter",sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  color: var(--today-text);
-  position: absolute;
-  left: 76%;
-  right: 0%;
-  top: 65%;
-  bottom: 0%;
-  
-}
-
-.figure .logo{
-position: absolute;
-left: 80%;
-right: 0%;
-top: 20%;
-bottom: 0%;
-}
-
-.theme-switch-wrapper {
-  display:inline-flex;
-  /* Direct alignment of content along horizontal axis */
-  flex-direction:row;
-  /* Tell's flexbox to center content around the non-horizontal axis (ie around the vertical axis) */
-  align-items:center;
-  float: right;
-  
+.slidecontainer {
+    width: 80%; /* Width of the outside container */
   }
   
-.theme-switch-wrapper span {
-  color: var(--toggle-text);
-  padding-right:10px ;
-}
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 9px; /* Specified height */
+    background: var(--emptysliderbar);/* Grey background */
+    border: white 1px solid;
+    border-radius: 100px;
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 38px;
+    height: 38px;
+    background: url("/images/icon-slider.svg") no-repeat 50% center,var(--sliderbackground);
+    border-radius: 50%;
+    cursor: pointer; /* Cursor on hover */
+    box-shadow: -5px 18px 24px hsl(174, 86%, 45%, 0.6);
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    width: 38px;
+    height: 38px;
+    background: url("/images/icon-slider.svg") no-repeat 50% center,var(--sliderbackground);
+    cursor: pointer; /* Cursor on hover */
+    
+  }
 
-.theme-switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
-}
 
-.theme-switch input {
-  display:none;
-}
 
-.slider {
-  background: var(--toggle-background);
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: .4s;
-}
 
-.slider:before {
-  background: var(--toggle-ball);
-  bottom: 4px;
-  content: "";
-  height: 26px;
-  left: 4px;
-  position: absolute;
-  transition: .4s;
-  width: 26px;
-}
-
-input:checked + .slider {
-  background-color: #66bb6a;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
+  /* The switch - the box around the slider */
+.switch {
+    
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right:0%;
+    left: 36%;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slide {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--togglebackground);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slide:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slide {
+    background-color:hsl(174, 77%, 80%);
+  }
+  
+  input:focus + .slider{
+    box-shadow: 0 0 1px hsl(174, 77%, 80%);
+  }
+  
+  input:checked + .slide:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+  
+  /* Rounded sliders */
+  .slide.round {
+    border-radius: 34px;
+  }
+  
+  .slide.round:before {
+    border-radius: 50%;
+  }

@@ -5,273 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="main.css">
   
-  <title>Frontend Mentor | [Challenge Name Here]</title>
- 
+  <title>Frontend Mentor | Interactive pricing component</title>
+  <link rel="stylesheet" href="main.css">
 
 </head>
 <body>
-<div class="dashboard">
 
-
-  <header>
-    <span class="title">
-      Social Media Dashboard</span><br>
-      <span class="subtitle">Total Followers: 23,004</span>
-      
-
-      
-      <div class="theme-switch-wrapper">
-        <span>Dark Mode </span>
-        <label class="theme-switch" for="checkbox">
-          
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-      </label>
-    </div>
-
-  </header>
-
-  <div class = "dashboardtop">
-
-  
-    <div style="border-top:5px solid hsl(208, 92%, 53%) "class="header">
-     <div class="username">
-      <img src="images/icon-facebook.svg" alt="facebook"/> 
-        @nathanf<br>
-     </div>
-      <span class="followers">
-        1987
-      </span><br>
-      <span class="subheader">
-        Followers
-      </span>
-     <br>
-     <span class="today">
-      <img src="images/icon-up.svg" alt="up"/>  12 Today
-     </span>
-    </div>
-
-
-
-    <div  style="border-top:5px solid hsl(203, 89%, 53%)" class="header" >
-      <div class="username">
-       <img src="images/icon-twitter.svg" alt="twitter"/> 
-         @nathanf<br>
-      </div>
-       <span class="followers">
-        1044
-       </span><br>
-       <span class="subheader">
-         Followers
-       </span>
-      <br>
-      <span class="today">
-       <img src="images/icon-up.svg" alt="up"/>  99 Today
-      </span>
-     </div>
-
-    
-     <div style="border-top:5px solid hsl(37, 97%, 70%);" class="header">
-      <div class="username">
-       <img src="images/icon-instagram.svg" alt="instagram"/> 
-         @nathanf<br>
-      </div>
-       <span class="followers">
-        11k
-       </span><br>
-       <span class="subheader">
-         Followers
-       </span>
-      <br>
-      <span class="today">
-       <img src="images/icon-up.svg" alt="up"/>  1099 Today
-      </span>
-     </div>
-
-
-     <div style="border-top:5px solid hsl(348, 97%, 39%)" class="header">
-      <div class="username">
-       <img src="images/icon-youtube.svg"alt="youtube"/> 
-         @nathanf<br>
-      </div>
-       <span class="followers">
-        8239
-       </span><br>
-       <span class="subheader">
-        Subscribers
-       </span>
-      <br>
-      <span class="today">
-       <img src="images/icon-up.svg" alt="iconup"/>  144 Today
-      </span>
-     </div>
-
-  </div>
-
-
-  <div>
-    <span class="middle">
-      Overview - Today</span><br>
-      
-    </div>
-
- <!-- <h1>
-  Overview - Today
- </h1>  -->
-<div class="dashboardbot">
-
-
-  <div class="figure">
-    <span class="pageviews"> 
-      Page Views
-    </span>    
-    <img class ="logo" src="images/icon-facebook.svg" alt="facebook"/>
-    <br> 
-   
-    <span class="views">
-      87
-    </span>
-
-    <span class="percent">
-      <img src="images/icon-up.svg" alt="iconup"/> 3%
-    </span>
-    
-  </div>
-
-
-  <div class="figure">
-    <span class="pageviews"> 
-      Likes
-    </span>    
-    <img class ="logo" src="images/icon-facebook.svg" alt="facebook"/>
-    <br> 
-   
-    <span class="views">
-      52
-    </span>
-
-    <span class="percent">
-      <img src="images/icon-up.svg" alt="iconup"/> 2%
-    </span>
-    
-  </div>
-
+<div class = "circles">
+  <svg xmlns="http://www.w3.org/2000/svg" width="146" height="145">
+    <g fill="none" fill-rule="evenodd" stroke="#CFD8EF">
+      <circle cx="63" cy="82" r="62.5"></circle>
+      <circle cx="105" cy="41" r="40.5"></circle>
+    </g>
+  </svg>
+</div>
  
-  <div class="figure">
-    <span class="pageviews"> 
-      Likes
-    </span>    
-    <img class ="logo" src="images/icon-instagram.svg " alt="instagram"/>
-    <br> 
-   
-    <span class="views">
-      5462
+  <div class="header">
+    <span class="title">
+      Simple, traffic-based pricing
+    </span><br>
+
+
+
+    <span class="subtitle">
+      Sign-up for our 30-day trial. No credit card required.
     </span>
-
-    <span class="percent">
-      <img src="images/icon-up.svg" alt="iconup"/> 2257%
-    </span>
-    
-  </div>
-
-
-  <div class="figure">
-    <span class="pageviews"> 
-      Profile Views
-    </span>    
-    <img class ="logo" src="images/icon-instagram.svg" alt="instagram"/>
-    <br> 
-   
-    <span class="views">
-      52k
-    </span>
-
-    <span class="percent">
-      <img src="images/icon-up.svg" alt="iconup"/>1375%
-    </span>
-    
-  </div>
-
-
-
-
-  <div class="figure">
-    <span class="pageviews"> 
-      Retweets
-    </span>    
-    <img class ="logo" src="images/icon-twitter.svg"alt="twitter"/>
-    <br> 
-   
-    <span class="views">
-      117
-    </span>
-
-    <span class="percent">
-      <img src="images/icon-up.svg" alt="iconup"/>303%
-    </span>
-    
-  </div>
-
-
-
-  <div class="figure">
-    <span class="pageviews"> 
-      Likes
-    </span>    
-    <img class ="logo" src="images/icon-twitter.svg" alt="twitter"/>
-    <br> 
-   
-    <span class="views">
-      507
-    </span>
-
-    <span class="percent">
-      <img src="images/icon-up.svg" alt="iconup"/>553%
-    </span>
-    
-  </div>
-
-
-  <div class="figure">
-    <span class="pageviews"> 
-      Likes
-    </span>    
-    <img class ="logo" src="images/icon-youtube.svg" alt="youtube"/>
-    <br> 
-   
-    <span class="views">
-      107
-    </span>
-
-    <span class="percent">
-      <img src="images/icon-up.svg" alt="iconup"/>19%
-    </span>
-    
-  </div>
-
-  <div class="figure">
-    <span class="pageviews"> 
-      Total Views
-    </span>    
-    <img class ="logo" src="images/icon-youtube.svg" alt="youtube"/>
-    <br> 
-   
-    <span class="views">
-      1407
-    </span>
-
-    <span class="percent">
-      <img src="images/icon-up.svg"/ alt="iconup">12%
-    </span>
-    
-  </div>
   </div> 
 
-</div>
+  <div class="main">
+    
+    <span class="pageviews">
+      <span class="views" id="demo"> </span>  <span class="price"> <span class="cost" id="cost">$8</span>/month</span>
+    </span><br>
+    
+    <div class="slidecontainer">
+      <input type="range" min="0" max="4" value="2" class="slider" id="myRange">
+    </div>
+
+    <span class="billing">
+      Monthly Billing 
+    </span>
+    <!-- Rounded switch -->
+    <label class="switch">
+     <input type="checkbox" id="billing-mode">
+      <span class="slide round"></span>
+    </label>
+
+    <span class="maindiscount">
+      Yearly Billing 
+    
+    <span class="discount">
+      25% discount
+    </span><br>
+ 
+ 
+ 
+  </span>
+
+<div class="details">
+
+
+  <img src="images/icon-check.svg"><span>   Unlimited websites
+   </span><br><br>
+
+   <img src="images/icon-check.svg"><span>
+    100% data ownership
+   </span><br><br>
+   <img src="images/icon-check.svg"><span>
+      Email reports
+    </span>
+   
+    <button> Start my trial </button>
+</div>  
+   
   </div>
-</div>
   <script src="app.js"></script>
 </body>
 </html>
