@@ -58,7 +58,20 @@ body{
 
 .header{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 90px 90px;
+    color: var(--titletext);
+    font-family: Spartan;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.theme{
+    align-self: center;
+    justify-self: end;
 }
 
 .title{
