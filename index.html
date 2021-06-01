@@ -5,81 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel='stylesheet' href="main.css">
+  <title>Frontend Mentor | Calculator app</title>
 
 </head>
 <body>
 
-<div class = "circles">
-  <svg xmlns="http://www.w3.org/2000/svg" width="146" height="145">
-    <g fill="none" fill-rule="evenodd" stroke="#CFD8EF">
-      <circle cx="63" cy="82" r="62.5"></circle>
-      <circle cx="105" cy="41" r="40.5"></circle>
-    </g>
-  </svg>
-</div>
- 
-  <div class="header">
-    <span class="title">
-      Simple, traffic-based pricing
-    </span><br>
-
-
-
-    <span class="subtitle">
-      Sign-up for our 30-day trial. No credit card required.
-    </span>
-  </div> 
-
-  <div class="main">
-    
-    <span class="pageviews">
-      <span class="views" id="demo"> </span>  <span class="price"> <span class="cost" id="cost">$8</span>/month</span>
-    </span><br>
-    
+  <div class="calculator-layout" > 
+    <div class="header">
+     <h1 class='title'>calc</h1>
+  
     <div class="slidecontainer">
-      <input type="range" min="0" max="4" value="2" class="slider" id="myRange">
+      <input type="range" min="1" max="3" value="1" class="slider" id="myRange">
+    </div>
     </div>
 
-    <span class="billing">
-      Monthly Billing 
-    </span>
-    <!-- Rounded switch -->
-    <label class="switch">
-     <input type="checkbox" id="billing-mode">
-      <span class="slide round"></span>
-    </label>
-
-    <span class="maindiscount">
-      Yearly Billing 
-    
-    <span class="discount">
-      25% discount
-    </span><br>
- 
- 
- 
-  </span>
-
-<div class="details">
+    <div class="solution">
+     <h1>399,981</h1>
+    </div>
 
 
-  <img src="images/icon-check.svg"><span>   Unlimited websites
-   </span><br><br>
+    <div class="buttons">
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="del">DEL</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>+</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>-</button>
+      <button>.</button>
+      <button>0</button>
+      <button>/</button>
+      <button>x</button>
+      <button class="reset">RESET</button>
+      <button class="equals">=</button>
+    </div>
 
-   <img src="images/icon-check.svg"><span>
-    100% data ownership
-   </span><br><br>
-   <img src="images/icon-check.svg"><span>
-      Email reports
-    </span>
-   
-    <button> Start my trial </button>
-</div>  
-   
+
   </div>
-  <script src="app.js"></script>
+
+<script src="app.js"></script>
 </body>
 </html>
