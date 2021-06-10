@@ -1,248 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,700;1,700&display=swap');
 
-:root{
-    --background:#3A4663;
-    --contrasttext:#FFFFFF;
-    --solutionbackground:#181F33;
-    --buttonsbackground: #242D44;
-    --button:#EAE3DC;
-    --specialbutton:#647198;
-    --equalsbutton:#D03F2F;
-    --buttontext:#434A59;
-    --titletext:#FFFFFF;
-    --boxshadow:#B3A497;
-    --equaltext:#FFFFFF;
-    --resetshadow:#414E73;
-    --equalsshadow:#93261A;
-}
-
-[data-theme="second"]{
-    --background:#E6E6E6;
-    --contrasttext:#FFFFFF;
-    --solutionbackground:#EEEEEE;
-    --buttonsbackground:  #D2CDCD;
-    --button: #E5E4E1;
-    --specialbutton:#378187;
-    --equalsbutton:#D03F2F;
-    --buttontext:#36362C;
-    --titletext:#36362C;
-    --boxshadow:#A79E91;
-    --equaltext:#FFFFFF;
-    --resetshadow:#1B6066;
-    --equalsshadow:#873901;
-    
-}
-
-[data-theme="third"]{
-    --background:#17062A;
-    --contrasttext:#FFFFFF;
-    --solutionbackground:#1E0936;
-    --buttonsbackground:  #1E0936;
-    --button: #331C4D;
-    --specialbutton:#56077C;
-    --equalsbutton:#00DED0;
-    --buttontext:#FFE53D;
-    --titletext:#FFE53D;
-    --boxshadow:#881C9E;
-    --equaltext:#1A2327;
-    --resetshadow:#BE15F4;
-    --equalsshadow:#6CF9F1;
-}
-
-
-body{
-    padding: 0;
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100px 1000px auto 100px;
+    grid-template-areas: 
+    "header header" 
+    "main main"
+    "photo photo"
+    "footer footer";
     margin: 0;
-    background-color:var(--background);
+    padding: 0;
+    font-family: 'Cabin', sans-serif;
+    background-color: #4C4C4C;
+  
 }
 
-.header{
+
+  .maincontent{
     display: grid;
-    grid-template-columns: 1fr 90px 90px;
-    grid-template-rows: 50px;
-    color: var(--titletext);
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 13px;
-    text-align: center;
-    letter-spacing: 1px;
-}
-
-.theme{
-    align-self: center;
-    justify-self: end;
-    padding-top: 35px;
-}
-
-.options{
-    padding-left:15px;
-    letter-spacing: 5px;
-}
-
-.title{
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 36px;
-    /* identical to box height */
-
-    text-align: center;
-    letter-spacing: -0.533333px;
-    color: var(--titletext);
-    text-align: left;
-}
-
-.calculator-layout{
-    display: grid;
-    grid-template-columns: 540px;
-    grid-template-rows: 50px 128px 480px;
-    grid-gap: 30px;
+    grid-template-columns: 2fr;
+    grid-template-rows: 3fr auto auto;
     position: absolute;
-    top: 50%;
     left: 50%;
+    top: 30%;
     transform: translate(-50%,-50%);
-}
+    margin-top: 150px;
+    gap: 20px;
+    text-align: center;
+    overflow: auto;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 
-.solution {
-    background-color: var(--solutionbackground);
-    border-radius: 10px;
-}
+  header {
+    grid-area:header;
+    margin-top: 1vh;
+  }
 
-.solution h1{
-    font-family: 'Spartan';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 54px;
-    /* identical to box height */
-    text-align: right;
-    letter-spacing: -0.8px;
-    color:  var(--titletext);
-    margin-right: 30px;
-}
+  footer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area:footer;
+    position: relative;
+  }
+
+  
+
+  footer ul{
+    justify-self:center;
+  }
+
+  footer li{
+  
+    display: inline;
+    
+  }
+
+  footer li img{
+  
+
+    height: 40px;
+    padding-left: 10px;
 
 
-.buttons{
-    background-color: var(--buttonsbackground);
-    border-radius: 10px;
+  }
+
+  .address{
+    color: white;
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+
+  .photos{
+    grid-area: photo;
     display: grid;
-    grid-template-columns: repeat(4,100px);
-    grid-template-rows: repeat(4,64px) 64px;  
-    justify-content: space-evenly;
-    align-content: space-evenly;
-   
-}
-
-.buttons button{
-    background: var(--button);
-    box-shadow: inset 0px -4px 0px var(--boxshadow);
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 32px;
-    line-height: 36px;  
-    letter-spacing: -0.533333px;
-    color: var(--buttontext)
-  
-}
-.buttons .del{
-    background: var(--specialbutton);
-    box-shadow: inset 0px -4px 0px var(--resetshadow);
-    border-radius: 10px;
-    
-    color: var(--contrasttext);
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 22px;
-    text-align: center;
-    letter-spacing: -0.333333px;
-  
-}
-
-
-.buttons .reset{
-    background: var(--specialbutton);
-    box-shadow: inset 0px -4px 0px var(--resetshadow);
-    border-radius: 10px;
-
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 22px;
-    text-align: center;
-    letter-spacing: -0.333333px;
-    width: 227px;
-    color: var(--contrasttext)
-}
-
-
-.buttons .equals{
-    background: var(--equalsbutton);
-    box-shadow: inset 0px -4px 0px var(--equalsshadow);
-    border-radius: 10px;
-    
-    font-family: Spartan;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 22px;
-    text-align: center;
-    letter-spacing: -0.333333px;
-    width: 227px;
-    margin-left: 130px;
-    color: var(--equaltext)
-}
-
-.slidecontainer {
-    width: 71px; 
-    height: 20px;
-    justify-self: end;
-    align-self: center;
-    padding-right: 10px;
-  }
-  
-  /* The slider itself */
-  .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
-    background: var(--buttonsbackground); /* Grey background */
-    outline: none; /* Remove outline */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-    border-radius: 13px;
-    padding-left: 5px;
-    padding-right:5px;
-  }
-  
-
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 16px; /* Set a specific slider handle width */
-    height: 16px; /* Slider handle height */
-    background: var(--equalsbutton); /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 50%;
-
+    grid-auto-flow: column;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
    
   }
-  
-  .slider::-moz-range-thumb {
-    width: 16px; /* Set a specific slider handle width */
-    height: 16px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 50%;
+
+  .photos::-webkit-scrollbar{
+    display: none;
   }
+
+  .photos > a{
+    scroll-snap-align: center;
+  }
+  
+  .gallery_img{
+    width: 600px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .price a{
+    grid-area:price;
+    /* background-image: url("price.png");  */
+  }
+
+  .mainbutton{
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 100px;
+
+    color: white;
+    width: 220px;
+    padding: 20px;
+    transition: background-color 0.5s ease;
+    justify-self: center;
+  }
+  
+  .mainbutton:hover{
+    background-color: black;
+  }
+
+  .message{
+    font-size:19px;
+    color: white;
+    
+  }
+  
+  .title{
+    font-size:100px;
+    color:  whitesmoke;
+  }
+
+  .canvas{
+    grid-area:main;
+
+  }
+  .container {
+    margin-right: 50px;
+  }
+  
+  .menu {
+    float: left;
+  }
+  
+  .menu li {
+    display: inline;
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+
+  .menu li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+    
+  }
+
+  .menu li a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  
+  
+  .menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    font-weight: 100;
+    font-size: 18px;
+  }
+
+  .title-head{
+    color: #ffffff;
+    font-size: 30px;
+    padding-right: 30px;
+  }
+
+
+  @media (min-width: 1000px){
+   .title{
+     width: 1000px;
+   }
+  }
+

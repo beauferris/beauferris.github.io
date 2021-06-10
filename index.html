@@ -1,54 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Chop Chop</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="https://unpkg.com/three@0.87.1/build/three.js"></script>
+        <script src="https://unpkg.com/three@0.87.1/examples/js/controls/OrbitControls.js"></script>
+        <script src="https://unpkg.com/three@0.87.1/examples/js/loaders/GLTFLoader.js"></script>
+        
+	</head>
+	<body>
+        <header>
+            <div class="container">
+                
+                <ul class="menu">
+                    <li class="title-head">Chop-Chop</li>
+                    <li><a href="#2">Book Online</a></li>
+                    <li><a href="#3">About</a></li>
+                    <li><a href="#3">Services</a></li>
+                </ul>
+            </div>
+        </header>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel='stylesheet' href="main.css">
-  <title>Frontend Mentor | Calculator app</title>
-
-</head>
-<body>
-
-  <div class="calculator-layout" > 
-    <div class="header">
-     <h1 class='title'>calc</h1>
-     <span class="theme">THEME</span>
      
-    <div class="slidecontainer">
-      <span class="options">1  2  3</span>
-      <input type="range" min="1" max="3" value="1" class="slider" id="myRange">
-    </div>
-    </div>
+        <div class="canvas" id="2">
+            <script src="js/app.js"></script> 
+        </div>
+       
 
-    <div class="solution">
-     <h1 value=''>_</h1>
-    </div>
+        <div class="maincontent">
+               
+            <span class="title ">Renfrew’s Community Barbershop</span>
+            
+            <h2 class="message">As barbers, we want to be a part of your self-care routine.<br> 
+            We want you to sit in our chairs and let us take care of the rest.<br>
+            We want you not only to look good, but feel good as well.<br> 
+            </h2>
 
-    <div class="buttons">
-      <button class="num" value="7">7</button>
-      <button class="num" value="8">8</button>
-      <button class="num" value="9">9</button>
-      <button class="del">DEL</button>
-      <button class="num" value="4">4</button>
-      <button class="num" value="5">5</button>
-      <button class="num" value="6">6</button>
-      <button class="add">+</button>
-      <button class="num" value='1'>1</button>
-      <button class="num" value="2">2</button>
-      <button class="num" value="3">3</button>
-      <button class="sub">-</button>
-      <button value=".">.</button>
-      <button class="num" value="0">0</button>
-      <button class="div">/</button>
-      <button class="mul">x</button>
-      <button class="reset">RESET</button>
-      <button class="equals">=</button>
-    </div>
+            <a class="mainbutton" href = "https://my.setmore.com/bookingpage/1f538a59-edaa-4ef9-96c4-b7ef43272f9c" >Set An Appointment</a>
+        </div>
 
-  </div>
+        <!-- <div class="main-photo">
+            <img src="/gallery/img_3.png" class="gallery_img" alt="Image 3">
+        </div> -->
 
-<script src="app.js"></script>
-</body>
+        <!-- <div class="photos">
+           <a><img src="/gallery/img_3.png" class="gallery_img" alt="Image 3"></a>
+           <a> <img src="gallery/img_1.png" class="gallery_img" alt="Image 1"></a>
+           <a><img src="/gallery/img_2.png" class="gallery_img" alt="Image 2"></a>
+            <a><img src="/gallery/img_4.png" class="gallery_img" alt="Image 4"></a>
+        </div> -->
+
+        <!-- <div class="price" id="3">
+          <img class = "shop" src = "price.png"> 
+            
+        </div>
+
+       -->
+
+        <footer>
+            <!-- <p style="margin: 20px;">701 8 Ave NE<br>
+                Calgary, AB<br> 
+                T2E 0R8<br>
+                (403) 230-2804</p> -->
+                
+
+                <span class="address"></span>
+
+                <ul>
+                    <li>
+                        <img src="icon-facebook.svg">
+                    </li>
+                    
+                    <li>
+                        <img src="icon-instagram.svg">
+                    </li>
+                </ul>
+
+              
+              
+        </footer>
+     
+         
+	</body>
 </html>
