@@ -92,7 +92,6 @@ loader.load( 'scissors.glb', function ( gltf ) {
 function animate(){
     requestAnimationFrame(animate);
     obj.rotation.y += 0.01;
-    
     renderer.render( scene, camera );
 }
 
