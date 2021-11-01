@@ -1,0 +1,92 @@
+.App {
+  font-family: -apple-system, BlinkMacSystemFont;
+
+  text-align: center;
+  height: 100%;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  grid-template-rows:100px 60vh 1fr;
+  grid-template-areas:
+  "a a c c"
+   "b b b b"
+   "d d d d";
+  
+  
+}
+
+.detail{
+  font-size: 3vw;
+}
+
+
+.link{
+  margin: 8vw;
+  border: none;
+  background: none;
+  font-size: max(2vw,20px);
+  font-weight: 600;
+  text-decoration: none;
+  
+}
+
+.projects{
+  grid-area: a;
+  justify-self: start;
+  margin-top: 30px;  
+}
+
+.link:hover{
+  color: antiquewhite;
+}
+
+.model {
+  grid-area: b;
+  
+}
+.social-media{
+  grid-area: c;
+  margin-top: 50px;
+  
+  
+}
+
+.description{
+  grid-area:d;
+  display: grid;
+  grid-template-columns: 1fr ;
+  height: 100%;
+
+}
+
+
+@media (min-width:1000px) {
+  .description {
+      grid-template-columns: 1fr 1fr;
+  }
+  .social-media{
+    display: block;
+  }
+  .projects{
+    display: block;
+  }
+  .App{
+    grid-template-rows: 60vh 1fr;
+    grid-template-areas:
+    "a b b c"
+    "d d d d";
+ 
+  }
+}
+
+.me{
+  grid-column: 1/4;
+}
+
+
+.project-container{
+    transform: rotate(-90deg);
+    margin-top: 50px;
+    margin-right: 10px;
+}
+

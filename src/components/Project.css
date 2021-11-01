@@ -1,0 +1,78 @@
+.thumbnail {
+    height: 90%;
+    width: 95%;
+    border-radius: 5px;
+    position: relative;
+    border: 0.5px solid black;
+}
+
+
+@keyframes left {
+   from{opacity: 0;}
+   to{opacity: 1;}
+}
+
+.description{
+    animation: left;
+    animation-duration: 2s;
+    
+}
+
+
+.card{
+    position: relative;
+    margin: 10px;
+}
+
+
+.view-button{
+    background-color: WHITE;
+    border-radius: 5px;
+    padding: 6px;
+    position: absolute;
+    left: 35%;
+    top: 35%;
+    display: none;
+    width: 30%;
+    
+ }
+
+ .git-button{
+    background-color: WHITE;
+    border-radius: 5px;
+    padding: 6px;
+    position: absolute;
+    left: 35%;
+    top: 55%;
+    display: none;
+    width: 30%;
+    
+ }
+
+ a{
+     text-decoration: none;
+     color: black;
+      
+ }
+
+ .card:hover .git-button {
+    display: block;
+    opacity: 1;
+   
+ }
+
+
+ .card:hover .view-button {
+    display: block;
+    opacity: 1;
+   
+ }
+
+ .card:hover img{
+    opacity: 0.4;
+   
+ }
+
+ a:hover{
+    
+ }

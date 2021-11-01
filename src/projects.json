@@ -1,0 +1,31 @@
+[
+    {
+        "url":"https://chopchopbarbershop.herokuapp.com/",
+        "git":"https://github.com/beauferris/appointmentapp",
+        "img": "images/appointment.png",
+        "name": "Appointment Maker"
+
+    },
+    {
+        "url": "https://beauferris.github.io/rock-paper-scissors/#/",
+        "git": "https://github.com/beauferris/rock-paper-scissors",
+        "img":"images/rock-paper-scissors.png",
+        "name": "Rock Paper Scissors"
+
+    },
+   
+    {
+        "url":"https://beauferris.github.io/galleria/#/",
+        "git":"https://github.com/beauferris/galleria",
+        "img": "images/gallery.png",
+        "name": "Art Gallery"
+
+    },
+    {
+        "url": "http://calgarycrimemap.herokuapp.com/",
+        "git": "https://github.com/beauferris/hike_visualization",
+        "img":"images/map.png",
+        "name": "Calgary Crime Map"
+    }
+   
+]
