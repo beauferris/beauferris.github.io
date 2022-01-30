@@ -8,7 +8,6 @@ import { TextureLoader } from 'three/src/loaders/TextureLoader'
 import { useLoader } from '@react-three/fiber'
 import { Canvas, useFrame } from '@react-three/fiber'
 
-
 export default function Model(props) {
     const group = useRef()
     const { nodes, materials } = useGLTF('/ness.glb')
@@ -25,12 +24,8 @@ export default function Model(props) {
                 material={materials.nus_body}
                 skeleton={nodes.nus.skeleton}
             >
-
                 <meshStandardMaterial map={colorMap} />
-
             </skinnedMesh>
-
-
         </group>
     )
 }

@@ -8,8 +8,10 @@
   grid-template-columns: 1fr 1fr 1fr auto;
   grid-template-rows:100px 60vh 1fr;
   grid-template-areas:
+  
   "a a c c"
    "b b b b"
+   "e e e e"
    "d d d d";
   
   
@@ -19,6 +21,9 @@
   font-size: 3vw;
 }
 
+.title{
+  grid-area: e;
+}
 
 .link{
   margin: 8vw;
@@ -74,6 +79,7 @@
     grid-template-rows: 60vh 1fr;
     grid-template-areas:
     "a b b c"
+    "e e e e"
     "d d d d";
  
   }

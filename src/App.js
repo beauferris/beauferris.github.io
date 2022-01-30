@@ -9,7 +9,7 @@ import Projects from './components/Projects';
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
   Link
 } from "react-router-dom";
@@ -25,31 +25,28 @@ export default function App() {
         <directionalLight />
         <Suspense fallback={null}>
           <Model scale={1} position={[0, -3, 0]} />
-          
         </Suspense>
       </Canvas>
-
       <Router>
+
         <div className='projects'>
           <div className='project-container'>
-          <Link className='link' to='/'>hamzey</Link><br></br>
-          <Link className='link' to='/Projects'>projects</Link>
+            <Link className='link' to='/'>hamzey</Link><br></br>
+            <Link className='link' to='/Projects'>projects</Link>
           </div>
-          
-        </div>
-        <div className="social-media">
-          <a href='https://github.com/'exact target="_blank" className='link'> 
-          <img style={{height:'50px'}} src='./images/github.svg'></img> </a>
         </div>
 
-      
-        <Switch>
-        
-          <Route path='/' exact component={About} />
-          <Route path='/projects' component={Projects} />
-        
-        </Switch>
-        
+        <div className="social-media">
+          <a href='https://github.com/' exact target="_blank" rel="noreferrer" className='link'>
+            <img style={{ height: '50px' }} src='./images/github.svg' alt=''></img> </a>
+        </div>
+
+
+        <Routes>
+          <Route path='/' exact element={<About/>} />
+          <Route path='/projects' element={<Projects />} />
+        </Routes>
+
       </Router>
       {/* <p>© 2021 Hamzey Beauferris. All Rights Reserved.</p> */}
     </div>

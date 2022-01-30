@@ -15,7 +15,11 @@
 .description{
     animation: left;
     animation-duration: 2s;
-    
+}
+
+.title{
+   animation: left;
+    animation-duration: 2s;
 }
 
 
@@ -71,8 +75,4 @@
  .card:hover img{
     opacity: 0.4;
    
- }
-
- a:hover{
-    
  }

@@ -12,6 +12,7 @@ const Projects = () => {
 
     return (
         <>
+            <h1 className='title'>Projects</h1>
             <div className="description">
                 {myProjects}
             </div>
