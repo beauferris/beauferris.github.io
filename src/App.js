@@ -21,10 +21,11 @@ export default function App() {
 
 
       <Canvas className="model">
-        <ambientLight intensity={0.2} />
+        <ambientLight intensity={0.3} />
         <directionalLight />
+      
         <Suspense fallback={null}>
-          <Model scale={1} position={[0, -3, 0]} />
+          <Model scale={1.2} position={[0, -6, 0]} />
         </Suspense>
       </Canvas>
       <Router>
@@ -43,7 +44,7 @@ export default function App() {
 
 
         <Routes>
-          <Route path='/' exact element={<About/>} />
+          <Route path='/' exact element={<About />} />
           <Route path='/projects' element={<Projects />} />
         </Routes>
 

@@ -1,0 +1,15 @@
+.title-card{
+    display: flex;
+   
+    justify-content: center;
+    width: 100%;
+    
+    background: rgb(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.me{
+    align-self: center;
+    justify-self: center;
+}

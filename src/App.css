@@ -5,8 +5,8 @@
   height: 100%;
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  grid-template-rows:100px 60vh 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:80px 60vh 1fr;
   grid-template-areas:
   
   "a a c c"
@@ -57,17 +57,20 @@
 }
 
 .description{
-  grid-area:d;
+  
   display: grid;
   grid-template-columns: 1fr ;
   height: 100%;
+  grid-area:d;
 
 }
 
 
 @media (min-width:1000px) {
   .description {
-      grid-template-columns: 1fr 1fr;
+  
+      display: flex;
+      justify-content: center;
   }
   .social-media{
     display: block;
@@ -81,12 +84,11 @@
     "a b b c"
     "e e e e"
     "d d d d";
- 
   }
-}
-
-.me{
-  grid-column: 1/4;
+  .model{
+    
+    justify-self: center;
+  }
 }
 
 

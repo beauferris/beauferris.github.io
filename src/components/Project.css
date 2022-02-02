@@ -18,10 +18,8 @@
 }
 
 .title{
-   animation: left;
-    animation-duration: 2s;
+   
 }
-
 
 .card{
     position: relative;
@@ -64,7 +62,6 @@
     opacity: 1;
    
  }
-
 
  .card:hover .view-button {
     display: block;

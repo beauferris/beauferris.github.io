@@ -1,7 +1,6 @@
 
 import data from '../projects.json'
 import Project from './Project'
-import './Projects.css'
 
 
 const Projects = () => {
