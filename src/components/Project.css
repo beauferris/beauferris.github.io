@@ -1,75 +1,97 @@
 .thumbnail {
-    height: 90%;
-    width: 95%;
-    border-radius: 5px;
-    position: relative;
-    border: 0.5px solid black;
+   width: 80%;
+   height: 75%;
+   border-radius: 20px;
+  
+}
+
+.thumbnail:hover{
+   transform: scale3d(.99,.99,.99) translateZ(0);
 }
 
 
 @keyframes left {
-   from{opacity: 0;}
-   to{opacity: 1;}
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
 }
 
-.description{
-    animation: left;
-    animation-duration: 2s;
+.card, .about {
+   animation: left;
+   animation-duration: 2s;
+
 }
 
-.title{
-   
-}
-
-.card{
-    position: relative;
-    margin: 10px;
+.title {
+   animation: left;
+   animation-duration: 2s;
 }
 
 
-.view-button{
-    background-color: WHITE;
-    border-radius: 5px;
-    padding: 6px;
-    position: absolute;
-    left: 35%;
-    top: 35%;
-    display: none;
-    width: 30%;
-    
- }
+.title-card{
+   width: 90%;
+   display: flex;
+   flex-direction: column;
+   align-items:flex-end;
+}
 
- .git-button{
-    background-color: WHITE;
-    border-radius: 5px;
-    padding: 6px;
-    position: absolute;
-    left: 35%;
-    top: 55%;
-    display: none;
-    width: 30%;
-    
- }
+.card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
 
- a{
-     text-decoration: none;
-     color: black;
-      
- }
-
- .card:hover .git-button {
-    display: block;
-    opacity: 1;
+   padding-bottom: 30px;
    
- }
+   margin: 4vw;
 
- .card:hover .view-button {
-    display: block;
-    opacity: 1;
-   
- }
+   border-radius: 30px;
+   background: linear-gradient(6.03deg,#FFF1F8 .5%,rgba(218,205,255,0) 46.89%),#ffeaee;
 
- .card:hover img{
-    opacity: 0.4;
-   
- }
+}
+
+.view-button {
+   background-color: WHITE;
+   border-radius: 5px;
+   padding: 6px;
+   position: absolute;
+   left: 35%;
+   top: 35%;
+   display: none;
+   width: 30%;
+
+}
+
+.git-button {
+   background-color: WHITE;
+   border-radius: 5px;
+   padding: 6px;
+   position: absolute;
+   left: 35%;
+   top: 55%;
+   display: none;
+   width: 30%;
+
+}
+
+a {
+   text-decoration: none;
+   color: black;
+
+}
+
+.card:hover .git-button {
+   display: block;
+   opacity: 1;
+
+}
+
+.card:hover .view-button {
+   display: block;
+   opacity: 1;
+
+}

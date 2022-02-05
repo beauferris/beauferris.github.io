@@ -2,13 +2,12 @@ import './About.css'
 
 const About = () => {
     return (
-        <div className='description' >
-            <div className='me'>
-                <h2 className='title-card' > Hamzey Beauferris</h2>
-                  
-            </div>
-            <div>
-            </div>
+        <div className='about'>
+            <h1  > Hamzey Beauferris</h1>
+            {/* <p>Bio</p>
+            <p>1994 </p>
+            <p>2019 </p>
+            <p>2020 to present</p> */}
         </div>
     )
 }
