@@ -1,6 +1,6 @@
 .thumbnail {
-   width: 80%;
-   height: 75%;
+   width: 85%;
+   height: 90%;
    border-radius: 20px;
   
 }
@@ -47,11 +47,19 @@
 
    padding-bottom: 30px;
    
-   margin: 4vw;
+   
 
    border-radius: 30px;
    background: linear-gradient(6.03deg,#FFF1F8 .5%,rgba(218,205,255,0) 46.89%),#ffeaee;
 
+}
+
+.card:nth-child(1){
+   background: linear-gradient(6.03deg,#FFF1F8 .5%,rgba(218,205,255,0) 46.89%),#ffeaee;
+}
+
+.card:nth-child(2){
+   background: linear-gradient(6.03deg,#ffeaee .5%,rgba(218,205,255,0) 46.89%),#FFF1F8;
 }
 
 .view-button {

@@ -11,7 +11,7 @@ const Projects = () => {
 
     return (
         <>
-            <h1 className='title'>Projects</h1>
+            <h1 className='title'>PROJECTS</h1>
             <div className="projects">
                 {myProjects}
             </div>
