@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from "@react-three/drei";
+import ProjectInfo from './components/ProjectInfo';
 import Model from './components/Model'
 import './App.css'
 import About from './components/About';
@@ -13,6 +14,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+import Project from './components/Project';
 
 export default function App() {
 
@@ -41,12 +44,14 @@ export default function App() {
         </Canvas>
 
         <Routes>
-          <Route path='/' exact element={<About />} />
-          <Route path='/projects' element={<Projects />} />
+          <Route path='/' element={<About />} />
+          <Route path='projects' element={<Projects />} />
+          <Route path='projects/:id' 
+            element={<ProjectInfo  />} />
         </Routes>
       </Router>
 
-      {/* <p>© 2021 Hamzey Beauferris. All Rights Reserved.</p> */}
+      <p className='foot'>© 2021 Hamzey Beauferris. All Rights Reserved.</p> 
     </div>
   )
 }

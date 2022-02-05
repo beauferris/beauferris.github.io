@@ -1,7 +1,9 @@
 import './Project.css'
-
+import { Link } from 'react-router-dom'
 const Project = (props) => {
     return (
+        <Link to={`/projects/${props.name}` }>
+       
         <div className='card'>
 
             <div className='title-card'>
@@ -17,7 +19,9 @@ const Project = (props) => {
             <a href={props.url} rel="noreferrer" target="_blank" className='view-button'>
                 <img src='./images/arrow.svg' alt="github icon"></img>
             </a> */}
+
         </div>
+        </Link>
     )
 }
 

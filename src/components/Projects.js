@@ -4,7 +4,6 @@ import Project from './Project'
 
 
 const Projects = () => {
-
     const myProjects = data.map((project) =>
         <Project name={project.name} img={project.img} url={project.url} git={project.git} > </Project>
     )
