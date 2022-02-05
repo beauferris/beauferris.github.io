@@ -25,7 +25,7 @@ export default function App() {
         <div className='info'>
           <div className='project-container'>
             <Link className='link' to='/'>hamzey</Link><br></br>
-            <Link className='link' to='/Projects'>projects</Link>
+            <Link className='link' to='/Projects' >projects</Link>
           </div>
 
           <div className="social-media">

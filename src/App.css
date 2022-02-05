@@ -41,6 +41,7 @@ canvas {
 .info img{
   margin-right: 30px;
 }
+
 .project-container{
   transform: rotate(-90deg);
   font-size: 2em;
@@ -65,13 +66,13 @@ canvas {
   margin-bottom: 30px;
 }
 
-
-
 .project-info{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px;
+  gap: 20px;
+  
 
 }
 
@@ -79,6 +80,21 @@ canvas {
   border-radius: 20px;
   width: 100%;
 }
+
+.project-text{
+  background-color: white;
+  border-radius: 20px;
+ 
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+}
+
+.project-text p{
+  padding: 20px;
+}
+
 ul {
   list-style-type: none;
 }
@@ -94,29 +110,27 @@ li{
   margin: 10px;
 }
 
-@media (min-width: 800px){
-  .projects {
- 
-    grid-template-columns: 1fr 1fr;
-    align-items: flex-start;
-  
-  }
-  
-  .project-info{
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    align-items:start;
-    justify-content: center;
-  }
 
-  ul,li { list-style-type: none;
-    list-style-position:inside;
-    
-    padding:0; }
-}
 
 .foot{
   display: flex;
   justify-content: center;
   opacity: 0.4;
+}
+
+
+@media (min-width: 800px){
+  .projects {
+ 
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  
+  }
+  
+
+
+  ul,li { list-style-type: none;
+    list-style-position:inside;
+    
+    padding:0; }
 }

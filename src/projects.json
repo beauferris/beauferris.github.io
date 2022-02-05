@@ -2,7 +2,7 @@
     {
         "url": "https://calm-harbor-25651.herokuapp.com/",
         "git": "https://github.com/beauferris/new-arrivals",
-        "img":"images/feed.png",
+        "img":"images/Feed.png",
         "img2":"images/new-arrivals.png",
         "name": "Shopify Feed",
         "description": "Web App that allows you to create a product feed from you're favorite shopify shops",
@@ -12,7 +12,7 @@
     {
         "url":"https://chopchopbarbershop.herokuapp.com/",
         "git":"https://github.com/beauferris/appointmentapp",
-        "img": "images/appointment.png",
+        "img": "images/Appointment.png",
         "name": "Booking App",
         "description": "Web App for creating appointments",
         "stack": "React, MongoDb, NodeJs"
