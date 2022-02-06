@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import data from '../projects.json'
 
 const ProjectInfo = () => {
@@ -10,11 +10,11 @@ const ProjectInfo = () => {
 
 
 
-                <h1>{project.name}</h1>
+                <h1><Link to="/projects">Projects</Link>->{project.name}</h1>
 
                 <div className="project-text">
 
-                    <p >{project.description}</p>
+                    <p style={{fontSize:"30px"}}>{project.description}</p>
 
                     <ul>
                         <li> <span className="category">SITE</span><a href={project.url} target='_blank'> {project.url}</a></li>
@@ -22,7 +22,7 @@ const ProjectInfo = () => {
                     </ul>
                 </div>
 
-                <img src='/images/new-arrivals.png' />
+                <img src={`images/${project.name}.png`} />
             </div>
 
         )

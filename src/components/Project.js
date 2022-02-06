@@ -10,7 +10,7 @@ const Project = (props) => {
                 <p className='card-type' >WEB APP</p>
                 <p className='card-name'> {props.name}</p>
             </div>
-
+            
             <img className='thumbnail' src={props.img} alt=''></img>
 
             {/* <a href={props.git} rel="noreferrer" target="_blank" className='git-button'>
