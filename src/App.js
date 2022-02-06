@@ -9,7 +9,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Link
@@ -30,7 +30,7 @@ export default function App() {
 
           <div className="social-media">
             <a href='https://github.com/' exact target="_blank" rel="noreferrer" className='link'>
-              <img style={{ height: '50px' }} src='./images/github.svg' alt=''></img> </a>
+              <img style={{ height: '50px' }} src='/images/github.svg' alt=''></img> </a>
           </div>
         </div>
 

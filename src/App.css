@@ -18,119 +18,133 @@ canvas {
 
 
 
-.title{
+.title {
   display: flex;
   justify-content: center;
 }
 
 
-.info{
+.info {
   display: flex;
   justify-content: space-between;
 }
 
-.info a{
+.info a {
   color: black;
   font-weight: bold;
-}
-.info:first-child{
-  margin-top: 50px;
 
 }
 
-.info img{
+.info:first-child {
+  padding-top: 50px;
+
+}
+
+.info img {
   margin-right: 30px;
 }
 
-.project-container{
+.project-container {
   transform: rotate(-90deg);
   font-size: 2em;
 }
 
 
-.title-card{
+.title-card {
   margin-right: 60px;
 }
 
-.card-type{
+
+.card-type {
   color: grey;
 
   font-size: 20px;
   margin-bottom: 5px;
 }
 
-.card-name{
+.card-name {
   font-weight: bold;
   font-size: 30px;
-  margin: 0; 
+  margin: 0;
   margin-bottom: 30px;
 }
 
-.project-info{
+.project-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px;
   gap: 20px;
-  
+
 
 }
 
-.project-info img{
+.project-info img {
   border-radius: 20px;
   width: 100%;
 }
 
-.project-text{
+.project-text {
   background-color: white;
   border-radius: 20px;
- 
+
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
-  
+ 
+ 
 }
 
-.project-text p{
+.project-text p {
   padding: 20px;
+
 }
+
+.project-text li {
+  white-space: nowrap;
+  overflow: hidden;
+ 
+}
+
 
 ul {
   list-style-type: none;
+
 }
 
-.category{
+.category {
   background-color: wheat;
   border-radius: 4px;
   margin: 2px;
   padding: 2px;
 }
 
-li{
+li {
   margin: 10px;
+
 }
 
 
 
-.foot{
+.foot {
   display: flex;
   justify-content: center;
   opacity: 0.4;
+  margin: 0;
 }
 
 
-@media (min-width: 800px){
+@media (min-width: 800px) {
   .projects {
- 
-    grid-template-columns: 1fr;
+
+    grid-template-columns: 1fr 1fr;
     align-items: flex-start;
-  
+
   }
-  
+}
 
-
-  ul,li { list-style-type: none;
-    list-style-position:inside;
-    
-    padding:0; }
+ul, li {
+  list-style-type: none;
+  list-style-position: inside;
+  padding-left: 5px;
 }
