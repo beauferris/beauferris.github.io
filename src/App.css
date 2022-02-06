@@ -1,3 +1,5 @@
+
+
 .about {
   display: flex;
   flex-direction: column;
@@ -103,7 +105,7 @@ canvas {
 .project-text li {
   white-space: nowrap;
   overflow: hidden;
- 
+
 }
 
 
@@ -135,6 +137,7 @@ li {
 
 
 @media (min-width: 800px) {
+
   .projects {
 
     grid-template-columns: 1fr 1fr;
