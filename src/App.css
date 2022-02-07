@@ -143,6 +143,11 @@ li {
     align-items: flex-start;
 
   }
+
+  .App{
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
 }
 
 ul, li {

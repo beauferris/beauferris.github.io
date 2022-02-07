@@ -10,11 +10,11 @@ const ProjectInfo = () => {
 
 
 
-                <h1><Link to="/projects">Projects</Link>->{project.name}</h1>
+                <h1><Link to="/projects">Projects  </Link> > {project.name}</h1>
 
                 <div className="project-text">
 
-                    <p style={{fontSize:"30px"}}>{project.description}</p>
+                    <p style={{fontSize:"30px", margin:"0px", padding:"10px"}}>{project.description}</p>
 
                     <ul>
                         <li> <span className="category">SITE</span><a href={project.url} target='_blank'> {project.url}</a></li>

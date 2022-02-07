@@ -44,14 +44,9 @@
    flex-direction: column;
    align-items: center;
    justify-content: center;
-
    padding-bottom: 30px;
-   
-   
-
    border-radius: 30px;
    background: linear-gradient(6.03deg,#FFF1F8 .5%,rgba(218,205,255,0) 46.89%),#ffeaee;
-
 }
 
 .card:nth-child(1){
@@ -59,7 +54,7 @@
 }
 
 .card:nth-child(2){
-   background: linear-gradient(6.03deg,#ffeaee .5%,rgba(218,205,255,0) 46.89%),#FFF1F8;
+   background: linear-gradient(39.4deg,#b6a0ea -2.55%,rgba(182,160,234,0) 45.21%),#f1ebff;
 }
 
 .view-button {
