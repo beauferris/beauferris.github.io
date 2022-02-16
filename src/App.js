@@ -41,14 +41,15 @@ export default function App() {
 
       <div className='items'>
       <div className='closet'>
+        
           <div className='closet-buttons'>
             <button onClick={() => { setHatState({ ...hatState, isOpen: !hatState.isOpen }) }}><img src={`./images/${hatState.current}.png`} />  </button>
             <div className='closet-buttons' >
               <button className={hatState.isOpen ? "" : 'hide'} onClick={() => setHatState({ ...hatState, current: "red-hat" })}><img src='./images/red-hat.png' /></button><br />
               <button className={hatState.isOpen ? "" : 'hide'} onClick={() => setHatState({ ...hatState, current: "black-hat" })}><img src='./images/black-hat.png' /></button>
             </div>
+        
           </div>
-
           <div className='closet-buttons'>
             <button onClick={() => { setTopState({ ...topState, isOpen: !topState.isOpen }) }}><img src={`./images/${topState.current}.png`} />  </button>
             <div className='closet-buttons' >

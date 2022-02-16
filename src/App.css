@@ -6,25 +6,33 @@
 
 .hide{
   visibility: hidden;
+  overflow: hidden;
+}
+
+.closet{
+  width: 100%;
 }
 
 .closet-buttons{
+  overflow: auto;
+  white-space: nowrap;
   margin-left: 20px;
-  
   display: flex;
- 
+
+
 }
 
 .closet-buttons button{
   margin-bottom: 20px;
   margin-right: 10px;
   background: transparent;
-
+ 
 }
 
 .closet-buttons img{
   width: 100px;
 }
+
 
 
 canvas {
@@ -61,7 +69,7 @@ canvas {
 }
 .closet{
   position: absolute;
-  top: 250px;
+  top: 200px;
   z-index: 1;
 }
 
