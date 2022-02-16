@@ -1,8 +1,7 @@
 .thumbnail {
-   width: 85%;
-   height: 90%;
+   width: 90%;
    border-radius: 20px;
-  
+ 
 }
 
 .thumbnail:hover{
@@ -25,7 +24,13 @@
    animation-duration: 1s;
 
 }
-
+.card a{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 30px;
+   
+}
 .title {
    animation: left;
    animation-duration: 1s;
@@ -40,22 +45,26 @@
 }
 
 .card {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   padding-bottom: 30px;
+  
+
    border-radius: 30px;
-   background: linear-gradient(6.03deg,#FFF1F8 .5%,rgba(218,205,255,0) 46.89%),#ffeaee;
+ 
+}
+
+link{
+   margin: 0;
+   padding: 0;
 }
 
 .card:nth-child(1){
-   background: linear-gradient(6.03deg,#FFF1F8 .5%,rgba(218,205,255,0) 46.89%),#ffeaee;
+   background: linear-gradient(6.03deg,#FFF1F8 .9%,rgba(104,104,104,0) 46.89%),#ffeaee;
 }
 
 .card:nth-child(2){
-   background: linear-gradient(39.4deg,#b6a0ea -2.55%,rgba(182,160,234,0) 45.21%),#f1ebff;
+   background: linear-gradient(6.03deg,white .9%,rgba(218,205,255,0) 46.89%),#ffeaee;
 }
+
+
 
 .view-button {
    background-color: WHITE;
@@ -83,8 +92,6 @@
 
 a {
    text-decoration: none;
-
-
 }
 
 .card:hover .git-button {
