@@ -4,9 +4,34 @@
   align-items: center;
 }
 
+.hide{
+  visibility: hidden;
+}
+
+.closet-buttons{
+  margin-left: 20px;
+  
+  display: flex;
+ 
+}
+
+.closet-buttons button{
+  margin-bottom: 20px;
+  margin-right: 10px;
+  background: transparent;
+
+}
+
+.closet-buttons img{
+  width: 100px;
+}
+
+
 canvas {
   height: 60vh;
 }
+
+
 
 .projects {
   display: grid;
@@ -34,6 +59,12 @@ canvas {
   font-weight: bold;
 
 }
+.closet{
+  position: absolute;
+  top: 250px;
+  z-index: 1;
+}
+
 
 .info:first-child {
   padding-top: 50px;
