@@ -10,7 +10,7 @@
 }
 
 .closet{
-  width: 80%;
+  width: 100%;
 }
 
 .closet-buttons{
@@ -181,6 +181,10 @@ li {
     grid-template-columns: 1fr 1fr;
     align-items: flex-start;
 
+  }
+
+  .closet{
+    width: 80%;
   }
 
   .App{

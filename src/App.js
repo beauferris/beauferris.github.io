@@ -23,8 +23,16 @@ export default function App() {
   const [topState, setTopState] = useState({ isOpen: false, current: "jacket" })
   const [bottomState, setBottomState] = useState({ isOpen: false, current: "pants" })
 
+
+  const closeCloset = () =>{
+ 
+  }
+
   return (
-    <div className="App">
+    <div className="App" >
+      <div onClick={closeCloset}>
+
+      
       <Router>
         <div className='info'>
           <div className='project-container'>
@@ -69,7 +77,7 @@ export default function App() {
         </div>
 
      
-        <Canvas className="model">
+        <Canvas className="model"  >
           <ambientLight intensity={0.4} />
           <directionalLight />
           <Suspense fallback={null}>
@@ -90,6 +98,7 @@ export default function App() {
       </Router>
 
       <p className='foot'>© 2021 Hamzey Beauferris. All Rights Reserved.</p>
+    </div>
     </div>
   )
 }
