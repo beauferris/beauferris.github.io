@@ -19,13 +19,13 @@
   margin-left: 20px;
   display: flex;
 
-
 }
 
 .closet-buttons button{
   margin-bottom: 20px;
   margin-right: 10px;
   background: transparent;
+  border: none;
  
 }
 
