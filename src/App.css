@@ -22,15 +22,14 @@
 }
 
 .closet-buttons button{
-  margin-bottom: 20px;
-  margin-right: 10px;
+ 
   background: transparent;
   border: none;
  
 }
 
 .closet-buttons img{
-  width: 100px;
+  width: 150px;
 }
 
 
@@ -69,7 +68,7 @@ canvas {
 }
 .closet{
   position: absolute;
-  top: 200px;
+  top: 170px;
   z-index: 1;
 }
 
@@ -116,6 +115,8 @@ canvas {
   gap: 20px;
 
 
+
+
 }
 
 .project-info img {
@@ -124,12 +125,13 @@ canvas {
 }
 
 .project-text {
-  background-color: white;
+  background-color: #ffeaee;
   border-radius: 20px;
 
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
+
  
  
 }

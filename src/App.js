@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-// import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import ProjectInfo from './components/ProjectInfo';
 import Model from './components/Model'
 import './App.css'
@@ -20,8 +20,8 @@ import {
 export default function App() {
 
   const [hatState, setHatState] = useState({ isOpen: false, current: "red-hat" })
-  const [topState, setTopState] = useState({ isOpen: false, current: "jacket" })
-  const [bottomState, setBottomState] = useState({ isOpen: false, current: "pants" })
+  const [topState, setTopState] = useState({ isOpen: false, current: "shirt" })
+  const [bottomState, setBottomState] = useState({ isOpen: false, current: "shorts" })
 
 
   const closeCloset = () =>{
@@ -75,7 +75,6 @@ export default function App() {
             </div>
           </div>
         </div>
-
      
         <Canvas className="model"  >
           <ambientLight intensity={0.4} />
@@ -84,8 +83,6 @@ export default function App() {
             <Model hatState={hatState} topState={topState} bottomState={bottomState} scale={1.2} position={[0, -6, 0]} />
           </Suspense>
         </Canvas>
-
-       
         </div>
 
 
