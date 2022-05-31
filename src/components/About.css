@@ -4,7 +4,8 @@
 }
 
 .about h1{
-    font-size: 4rem;
+    font-size: 10vw;
+
 }
 
 .about p {
@@ -16,4 +17,12 @@
     background: whitesmoke;
     border: 1px solid black;
     padding: 20px;
+}
+
+@media (min-width: 800px) {
+
+    .about h1{
+        font-size: 4rem;
+    }
+
 }
