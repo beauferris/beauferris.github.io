@@ -1,0 +1,66 @@
+.closet {
+
+    margin-top: 140px;
+    
+    z-index: 1;
+    max-width: auto;
+    position: absolute;
+    overflow: hidden;
+}
+
+.hide {
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.closet-hide {
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+}
+
+.closet-buttons {
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+}
+
+.closet-buttons button {
+    margin: 10px;
+    background: whitesmoke;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.closet-buttons img {
+    width: 13vw;
+    max-width: 150px;
+    min-width: 120px;
+}
+
+.closet-toggle {
+    background: whitesmoke;
+    position: absolute;
+    z-index: 2;
+    outline: none;
+
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+
+    cursor: pointer;
+}
+
+
+
+@media (min-width: 800px) {
+
+ 
+    .closet {
+        max-width: 48vw;
+    }
+
+}

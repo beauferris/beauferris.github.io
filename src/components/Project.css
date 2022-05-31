@@ -4,36 +4,27 @@
  
 }
 
-.thumbnail:hover{
-   transform: scale3d(.99,.99,.99) translateZ(0);
-}
 
-
-@keyframes left {
-   from {
-      opacity: 0;
-   }
-
-   to {
-      opacity: 1;
-   }
-}
-
-.card, .about, .project-info {
-   animation: left;
-   animation-duration: 1s;
-
-}
-.card a{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin-bottom: 30px;
-   
-}
-.title {
-   animation: left;
-   animation-duration: 1s;
+/* project buttons */
+.title-card {
+   margin-right: 60px;
+ }
+ 
+ .card-type {
+   color: grey;
+   font-size: 20px;
+   margin-bottom: 5px;
+ }
+ 
+ .card-name {
+   font-weight: bold;
+   font-size: 30px;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ a {
+   text-decoration: none;
 }
 
 
@@ -43,66 +34,4 @@
    flex-direction: column;
    align-items:flex-end;
    
-}
-
-.card {
-  
-
-   border-radius: 30px;
- 
-}
-
-link{
-   margin: 0;
-   padding: 0;
-}
-
-.card:nth-child(1){
-   background: linear-gradient(6.03deg,#FFF1F8 .9%,rgba(104,104,104,0) 46.89%),#ffeaee;
-}
-
-.card:nth-child(2){
-   background: linear-gradient(6.03deg,white .9%,rgba(218,205,255,0) 46.89%),#ffeaee;
-}
-
-
-
-.view-button {
-   background-color: WHITE;
-   border-radius: 5px;
-   padding: 6px;
-   position: absolute;
-   left: 35%;
-   top: 35%;
-   display: none;
-   width: 30%;
-
-}
-
-.git-button {
-   background-color: WHITE;
-   border-radius: 5px;
-   padding: 6px;
-   position: absolute;
-   left: 35%;
-   top: 55%;
-   display: none;
-   width: 30%;
-
-}
-
-a {
-   text-decoration: none;
-}
-
-.card:hover .git-button {
-   display: block;
-   opacity: 1;
-
-}
-
-.card:hover .view-button {
-   display: block;
-   opacity: 1;
-
 }

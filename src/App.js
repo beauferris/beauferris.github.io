@@ -5,98 +5,112 @@ import ProjectInfo from './components/ProjectInfo';
 import Model from './components/Model'
 import './App.css'
 import About from './components/About';
+import Project from './components/Project';
+import Closet from './components/Closet';
+import Resume from './components/Resume';
 
-import Projects from './components/Projects';
-
-import {
-  HashRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-
-
+// import {
+//   HashRouter as Router,
+//   Routes,
+//   Route,
+//   Link
+// } from "react-router-dom";
 
 export default function App() {
 
   const [hatState, setHatState] = useState({ isOpen: false, current: "red-hat" })
-  const [topState, setTopState] = useState({ isOpen: false, current: "shirt" })
-  const [bottomState, setBottomState] = useState({ isOpen: false, current: "shorts" })
+  const [topState, setTopState] = useState({ isOpen: false, current: "jacket" })
+  const [bottomState, setBottomState] = useState({ isOpen: false, current: "pants" })
+  const [closet, setCloset] = useState(false);
+  const [currentGrid, setCurrentGrid] = useState(0);
 
 
-  const closeCloset = () =>{
- 
+  const toggleCloset = () => {
+    setCloset(!closet)
+
+  }
+  const toggleHat = () => {
+    setHatState({ ...hatState, isOpen: !hatState.isOpen })
+
+  }
+  const changeHat = (event) => {
+    setHatState({ ...hatState, current: event.currentTarget.value })
+    console.log(typeof (event.currentTarget.value))
+  }
+
+  const toggleTop = () => {
+    setTopState({ ...topState, isOpen: !topState.isOpen })
+
+  }
+  const changeTop = (event) => {
+    setTopState({ ...topState, current: event.currentTarget.value })
+  }
+
+  const toggleBottom = () => {
+    setBottomState({ ...bottomState, isOpen: !bottomState.isOpen })
+
+  }
+  const changeBottom = (event) => {
+    setBottomState({ ...bottomState, current: event.currentTarget.value })
+  }
+
+  const resize = (event) => {
+    if (+event.currentTarget.id === currentGrid) {
+      setCurrentGrid(0)
+
+    } else {
+      setCurrentGrid(+event.currentTarget.id)
+    }
   }
 
   return (
     <div className="App" >
-      <div onClick={closeCloset}>
+      <div className='inner-grid'>
+        <div onClick={resize} className={currentGrid === 0 ? 'expand-left' : 'grid-item'} id={0}>
+          {currentGrid === 0 ? <About /> :
+            <p style={{ "fontWeight": "bold", "fontSize": "30px", "marginTop": "45px" }}>About</p>}
+        </div>
+        <div onClick={currentGrid === 1 ? 'none' : resize} className={currentGrid === 1 ? 'expand-left' : 'grid-item'} id={1}>
+          {currentGrid === 1 ? <Resume /> : <p style={{ "fontWeight": "bold", "fontSize": "30px", "marginTop": "45px" }}>Resume</p>}</div>
 
-      
-      <Router>
-        <div className='info'>
-          <div className='project-container'>
-            <Link className='link' to='/'>hamzey</Link><br></br>
-            <Link className='link' to='/Projects' >projects</Link>
-          </div>
-
-          <div className="social-media">
-            <a href='https://github.com/' exact target="_blank" rel="noreferrer" className='link'>
-              <img style={{ height: '50px' }} src='/images/github.svg' alt=''></img> </a>
-          </div>
+        <div onClick={currentGrid === 2 ? 'none' : resize} className={currentGrid === 2 ? 'expand-left' : 'grid-item'} id={2}>
+          {currentGrid === 2 ? <>
+            <Project name="Shopify Feed" img="" />
+            <ProjectInfo style={{ "padding": "0" }} url="https://shopifyfeed.herokuapp.com/" name="Shopify Feed" img="/images/Feed.png" stack="React, MongoDb, NodeJs" description="Web App that allows you to create a product feed from you're favorite shopify shops" /></> :
+            <Project name="Shopify Feed" img="" />}
         </div>
 
-
-      <div className='items'>
-      <div className='closet'>
-        
-          <div className='closet-buttons'>
-            <button onClick={() => { setHatState({ ...hatState, isOpen: !hatState.isOpen }) }}><img src={`./images/${hatState.current}.png`} />  </button>
-            <div className='closet-buttons' >
-          
-              <button className={hatState.isOpen ? "" : 'hide'} onClick={() => setHatState({ ...hatState, current: "black-hat" })}><img src='./images/black-hat.png' /></button>
-              <button className={hatState.isOpen ? "" : 'hide'} onClick={() => setHatState({ ...hatState, current: "red-hat" })}><img src='./images/red-hat.png' /></button><br />
-            </div>
-        
-          </div>
-          <div className='closet-buttons'>
-            <button onClick={() => { setTopState({ ...topState, isOpen: !topState.isOpen }) }}><img src={`./images/${topState.current}.png`} />  </button>
-            <div className='closet-buttons' >
-              <button className={topState.isOpen ? "" : 'hide'} onClick={() => setTopState({ ...topState, current: "jacket" })}><img src='./images/jacket.png' /></button><br />
-              <button className={topState.isOpen ? "" : 'hide'} onClick={() => setTopState({ ...topState, current: "shirt" })}><img src='./images/shirt.png' /></button>
-            </div>
-          </div>
-
-          <div className='closet-buttons'>
-            <button onClick={() => { setBottomState({ ...bottomState, isOpen: !bottomState.isOpen }) }}><img src={`./images/${bottomState.current}.png`} />  </button>
-            <div className='closet-buttons' >
-              <button className={bottomState.isOpen ? "" : 'hide'} onClick={() => setBottomState({ ...bottomState, current: "pants" })}><img src='./images/pants.png' /></button><br />
-              <button className={bottomState.isOpen ? "" : 'hide'} onClick={() => setBottomState({ ...bottomState, current: "shorts" })}><img src='./images/shorts.png' /></button>
-            </div>
-          </div>
-        </div>
-     
-        <Canvas className="model"  >
-          <ambientLight intensity={0.4} />
-          <directionalLight />
-          <Suspense fallback={null}>
-            <Model hatState={hatState} topState={topState} bottomState={bottomState} scale={1.2} position={[0, -6, 0]} />
-          </Suspense>
-        </Canvas>
+        <div onClick={currentGrid === 3 ? 'none' : resize} className={currentGrid === 3 ? 'expand-left' : 'grid-item'} id={3}>
+          {currentGrid === 3 ? <>
+            <Project name="Booking App" img="" />
+            <ProjectInfo style={{ "padding": "0" }} url="https://chopchopbarbershop.herokuapp.com/" name="Booking App" img="/images/Appointment.png" stack="React, MongoDb, NodeJs" description="Web App for creating appointments" /></> :
+            <Project name="Booking App" img="" />}
         </div>
 
+        <div className={currentGrid === 4 ? 'expand-model' : 'grid-item-model'} id={4}>
+          {<div className='model'>
+            <button className="closet-toggle" onClick={toggleCloset}>DRESS ME</button>
 
-        <Routes>
-          <Route path='/' element={<About />} />
-          <Route path='projects' element={<Projects />} />
-          <Route path='projects/:id'
-            element={<ProjectInfo />} />
-        </Routes>
-      </Router>
+            <Closet hatState={hatState} toggleHat={toggleHat} changeHat={changeHat}
+              topState={topState} toggleTop={toggleTop} changeTop={changeTop}
+              bottomState={bottomState} toggleBottom={toggleBottom} changeBottom={changeBottom} closet={closet} />
 
-      <p className='foot'>© 2021 Hamzey Beauferris. All Rights Reserved.</p>
+            <Canvas>
+              <ambientLight intensity={0.4} />
+              <directionalLight />
+              <OrbitControls enableZoom={false}/>
+              <Suspense fallback={null}>
+                <Model hatState={hatState} topState={topState} bottomState={bottomState} scale={1.2} position={[0, -6, 0]} />
+              </Suspense>
+            </Canvas>
+          </div>}
+        </div>
+      </div>
+      {/* <p className='foot'>© 2021 Hamzey Beauferris. All Rights Reserved.</p> */}
+
     </div>
-    </div>
+
+
   )
 }
 
