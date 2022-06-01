@@ -70,22 +70,35 @@ export default function App() {
           {currentGrid === 0 ? <About /> :
             <p style={{ "fontWeight": "bold", "fontSize": "30px", "marginTop": "45px" }}>About</p>}
         </div>
-        <div onClick={currentGrid === 1 ? 'none' : resize} className={currentGrid === 1 ? 'expand-left' : 'grid-item'} id={1}>
+        <div id="resume" onClick={currentGrid === 1 ? 'none' : resize} className={currentGrid === 1 ? 'expand-left' : 'grid-item'} id={1}>
           {currentGrid === 1 ? <Resume /> : <p style={{ "fontWeight": "bold", "fontSize": "30px", "marginTop": "45px" }}>Resume</p>}</div>
 
         <div onClick={currentGrid === 2 ? 'none' : resize} className={currentGrid === 2 ? 'expand-left' : 'grid-item'} id={2}>
           {currentGrid === 2 ? <>
             <Project name="Shopify Feed" img="" />
-            <ProjectInfo style={{ "padding": "0" }} url="https://shopifyfeed.herokuapp.com/" name="Shopify Feed" img="/images/Feed.png" stack="React, MongoDb, NodeJs" description="Web App that allows you to create a product feed from you're favorite shopify shops" /></> :
+            <ProjectInfo style={{ "padding": "0" }} url="https://shopifyfeed.herokuapp.com/"
+               name="Shopify Feed" 
+               img1="/images/homepage.png" 
+               img2="/images/search.png"
+               img3="/images/favs.png"
+               stack="React, MongoDb, NodeJs" 
+               description="Web App that allows you to create a product feed from you're favorite shopify shops" /></> :
             <Project name="Shopify Feed" img="" />}
         </div>
 
         <div onClick={currentGrid === 3 ? 'none' : resize} className={currentGrid === 3 ? 'expand-left' : 'grid-item'} id={3}>
           {currentGrid === 3 ? <>
             <Project name="Booking App" img="" />
-            <ProjectInfo style={{ "padding": "0" }} url="https://chopchopbarbershop.herokuapp.com/" name="Booking App" img="/images/Appointment.png" stack="React, MongoDb, NodeJs" description="Web App for creating appointments" /></> :
+            <ProjectInfo style={{ "padding": "0" }} url="https://chopchopbarbershop.herokuapp.com/" 
+              name="Booking App" 
+              img1="/images/chop1.png"
+              img2= "/images/chop2.png"
+              img3= "/images/chop3.png"
+              stack="React, MongoDb, NodeJs" 
+              description="Web App for creating appointments" /></> :
             <Project name="Booking App" img="" />}
         </div>
+
 
         <div className={currentGrid === 4 ? 'expand-model' : 'grid-item-model'} id={4}>
           {<div className='model'>
@@ -98,7 +111,7 @@ export default function App() {
             <Canvas>
               <ambientLight intensity={0.4} />
               <directionalLight />
-              <OrbitControls enableZoom={false}/>
+              {/* <OrbitControls enableZoom={false}/> */}
               <Suspense fallback={null}>
                 <Model hatState={hatState} topState={topState} bottomState={bottomState} scale={1.2} position={[0, -6, 0]} />
               </Suspense>

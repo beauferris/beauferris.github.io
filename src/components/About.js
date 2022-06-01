@@ -5,7 +5,7 @@ const About = () => {
         <div className='about'>
             <h1> HAMZEY BEAUFERRIS</h1>
             <p> Front-end developer based in Canada &#x1F1E8;&#x1F1E6;. Graduated from the University of Calgary with a B.Sc in Computer Science in 2020. 
-                Interested in all things UI.
+                Interested in design and all things UI/UX.
             </p>
             {/* <p>Bio</p>
             <p>1994 </p>
