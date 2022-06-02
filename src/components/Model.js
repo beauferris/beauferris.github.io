@@ -9,7 +9,7 @@ import { useGLTF } from '@react-three/drei'
 export default function Model(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/hamster.glb')
-  useFrame((state, delta) => (group.current.rotation.y += 0.009))
+  useFrame((state, delta) => (group.current.rotation.y += 0.012))
 
   return (
     <group ref={group} {...props} dispose={null}>

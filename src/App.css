@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: whitesmoke;
+  background: white;
   text-decoration: none;
   color: black;
   z-index: 2;
@@ -98,7 +98,7 @@
 
   .expand-left {
     width: 50vw;
-    grid-row: 2/6;
+    grid-row: 2/4;
 
   }
 
@@ -106,8 +106,5 @@
     grid-column: 2/5;
   }
 
-  .expand-model {
-    grid-column: 1/5;
-  }
 
 }

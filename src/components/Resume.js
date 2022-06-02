@@ -12,17 +12,18 @@ const Resume = () => {
             <div className="resume" style={{ "margin": "20px" }}>
                 <h2>Education</h2>
                 
-                <p className='bubble'><b>BS in Computer Science with a minor in Economics,</b> University of Calgary - 2020 </p>
+                <p className='bubble'><b>BS in Computer Science with a minor in Economics,</b> University of Calgary-2020 </p>
                 
                 <h2>Certification</h2>
                 <p className='bubble'><b>Desktop Specialist,</b> Tableau  - 2020</p>
                 <h2>Experience </h2>
-                <p><b>Junior Developer</b>, Epic Group - 2020-Present  </p>
+                <p><b>Web Developer</b>, Epic Group - 2020-Present  </p>
                
                 <div className='bubble'>
                     <p >•	Collaborated on interdisciplinary team to develop a custom web application (HTML, CSS, JavaScript) for Dynamics 365 users.  </p>
                     <p> •	Application unifies sales team workflows and allows them to manage and quote 100% of their jobs in Dynamics 365.</p>
                     <p>   •	Directly worked with sales team/estimators to collect requirements and better understand their business needs.</p>
+                    <p>•	Designed and developed user and product forms using Figma, CSS, and HTML.</p>
                     <p>•	Scraped product data from websites/pdfs for master product list using python.</p>
                     <p>•	Designed/developed data workflows using Microsoft Azure tools and Python to automate 70% of product data ingestion into Dynamics 365.</p>
                     <p>•	Developed and designed dashboards to summarize 10+ data intensive tables using tools such as Excel, Python, and PowerBI to forecast data and provide evidence for major business decisions.</p>
