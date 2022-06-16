@@ -1,8 +1,11 @@
+.resume{
+   padding: 0 0.5rem;
+}
+
 .head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .head p {
@@ -13,10 +16,8 @@
 
 .bubble {
     border-radius: 20px;
-    
     background-color: white;
     border: 1px solid black;
     padding: 10px;
-   
 }
 

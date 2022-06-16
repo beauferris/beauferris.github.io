@@ -16,8 +16,7 @@ const ProjectInfo = (props) => {
 
             <div className="imgs">
                 <img src={props.img1} alt="application screenshot" />
-                <img src={props.img2} alt="application screenshot" />
-                <img src={props.img3} alt="application screenshot" />
+            
             </div>
             
         </div>

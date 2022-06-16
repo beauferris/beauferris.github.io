@@ -3,7 +3,7 @@
 .imgs{
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr;
   gap: 5px;
 }
 
@@ -17,10 +17,9 @@
   }
   
   .project-info img {
-    border-radius: 20px;
+    
     width: 100%;
    
-    border: 1px solid black;
     margin-bottom: 10px;
     object-fit: cover;
 
@@ -29,8 +28,7 @@
   .project-text {
     border-radius: 20px;
     width: 100%;
-    background-color: white;
-    border: 1px solid black;
+    font-weight: 500;
     margin-bottom: 10px;
   }
   

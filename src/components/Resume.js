@@ -2,7 +2,7 @@
 import './Resume.css';
 const Resume = () => {
     return (
-        <div >
+        <div className='resume'>
             <div className="head">
           
                 <a className="download-toggle" style={{ "position": "relative" }} href="/assets/hamzeyBeauferrisResume.pdf" download>Download</a>

@@ -66,42 +66,13 @@ export default function App() {
   return (
     <div className="App" >
       <div className='inner-grid'>
-        <div onClick={resize} className={currentGrid === 0 ? 'expand-left' : 'grid-item'} id={0}>
-          {currentGrid === 0 ? <About /> :
-            <p style={{ "fontWeight": "bold", "fontSize": "30px", "marginTop": "45px" }}>About</p>}
-        </div>
-        <div id="resume" onClick={currentGrid === 1 ? 'none' : resize} className={currentGrid === 1 ? 'expand-left' : 'grid-item'} id={1}>
-          {currentGrid === 1 ? <Resume /> : <p style={{ "fontWeight": "bold", "fontSize": "30px", "marginTop": "45px" }}>Resume</p>}</div>
+        <div onClick={resize} style={{ 'background-color': 'rgb(100,140,98)' }} className='grid-item' id={0}>
+          <About />
 
-        <div onClick={currentGrid === 2 ? 'none' : resize} className={currentGrid === 2 ? 'expand-left' : 'grid-item'} id={2}>
-          {currentGrid === 2 ? <>
-            <Project name="Shopify Feed" img="" />
-            <ProjectInfo style={{ "padding": "0" }} url="https://shopifyfeed.herokuapp.com/"
-               name="Shopify Feed" 
-               img1="/images/homepage.png" 
-               img2="/images/search.png"
-               img3="/images/favs.png"
-               stack="React, MongoDb, NodeJs" 
-               description="Web App that allows you to create a product feed from you're favorite shopify shops" /></> :
-            <Project name="Shopify Feed" img="" />}
         </div>
 
-        <div onClick={currentGrid === 3 ? 'none' : resize} className={currentGrid === 3 ? 'expand-left' : 'grid-item'} id={3}>
-          {currentGrid === 3 ? <>
-            <Project name="Booking App" img="" />
-            <ProjectInfo style={{ "padding": "0" }} url="https://chopchopbarbershop.herokuapp.com/" 
-              name="Booking App" 
-              img1="/images/chop1.png"
-              img2= "/images/chop2.png"
-              img3= "/images/chop3.png"
-              stack="React, MongoDb, NodeJs" 
-              description="Web App for creating appointments" /></> :
-            <Project name="Booking App" img="" />}
-        </div>
-
-
-        <div className={currentGrid === 4 ? 'expand-model' : 'grid-item-model'} id={4}>
-          {<div className='model'>
+        <div className='grid-item-model' id={4}>
+          {<div>
             <button className="closet-toggle" onClick={toggleCloset}>DRESS ME</button>
 
             <Closet hatState={hatState} toggleHat={toggleHat} changeHat={changeHat}
@@ -118,6 +89,46 @@ export default function App() {
             </Canvas>
           </div>}
         </div>
+      </div>
+
+      <div id="grid" className='second-grid'>
+
+        <a href='#2' onClick={currentGrid === 2 ? 'none' : resize} className={currentGrid === 2 ? 'expand-left' : 'grid-item'} id={2}>
+          {currentGrid === 2 ? <>
+            <Project href='#1' name="Shopify Feed" img="" />
+            <ProjectInfo style={{ "padding": "0" }} url="https://shopifyfeed.herokuapp.com/"
+              name="Shopify Feed"
+              img1="/images/feed1.png"
+              stack="React, MongoDb, NodeJs"
+              description="Web App that allows you to create a product feed from you're favorite shopify shops." /></> :
+            <>
+              <div className='title-card-video'>
+                <p className='card-type' >WEB APP</p>
+                <p className='card-name'> Shopify Feed</p>
+              </div>
+              <video className="video-loop" autoPlay muted loop >
+                <source src="./images/feed-vid.mp4" type="video/mp4" />
+              </video>
+              {/* <img className ="video-loop" src="./images/shop-gif.mp4"/> */}
+            </>
+          }
+        </a>
+
+        <a href='#3' onClick={currentGrid === 3 ? 'none' : resize} className={currentGrid === 3 ? 'expand-left' : 'grid-item'} id={3}>
+          {currentGrid === 3 ? <>
+            <Project name="Booking" img="" />
+            <ProjectInfo style={{ "padding": "0" }} url="https://chopchopbarbershop.herokuapp.com/"
+              name="Booking App"
+              img1="./images/chop0.png"
+              stack="React, MongoDb, NodeJs"
+              description="Web App for creating appointments." /></> :
+
+            <Project name="Booking App" />
+          }
+        </a>
+        <a href='#1' onClick={currentGrid === 1 ? 'none' : resize} className={currentGrid === 1 ? 'expand-left' : 'grid-item'} id={1}>
+          {currentGrid === 1 ? <Resume /> : <h2 style={{ "fontSize": "40px" }}>Resume</h2>}</a>
+
       </div>
       {/* <p className='foot'>© 2021 Hamzey Beauferris. All Rights Reserved.</p> */}
 

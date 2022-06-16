@@ -1,7 +1,7 @@
 .closet {
     margin-top: 110px;
     z-index: 1;
-    max-width: 100vw;
+    max-width: 35vw;
     position: absolute;
     overflow: hidden;
 }
@@ -12,13 +12,12 @@
 }
 
 .closet-hide {
-    margin-top: 140px;
+    margin-top: 110px;
     z-index: 1;
-    max-width: 100vw;
+    max-width: 35vw;
     position: absolute;
     overflow: hidden;
     visibility: hidden;
-    
 }
 
 .closet-buttons {
@@ -36,10 +35,8 @@
 }
 
 .closet-buttons img {
-    width: 14vw;
-    max-width: 150px;
-    min-width: 80px;
-  
+    width: 8rem;
+    
 }
 
 .closet-toggle {
@@ -71,6 +68,6 @@
 
 @media (min-width: 800px) {
     .closet {
-        max-width: 48vw;
+        max-width: 35vw;
     }
 }
