@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&display=swap');
 
 .about {
-    padding: 30px;
-
+    text-align: justify;
+    font-size: 7vw;
+    padding: 40px 40px 0 40px;
+   
 }
 
 .about img {
-    width: 80px;
-    margin: 0 10px 0 0;
-}
-
-.about h1 {
-    font-size: max(6vw, 15vw)
+    width: 15vw;
+    margin: 10px 10px 0 0;
 }
 
 .about img:hover {
+
     transform: scale(1.1);
 }
 
@@ -30,8 +29,14 @@
 
 @media (min-width: 800px) {
 
-    .about h1 {
-        font-size: max(8vw, 30px)
+    .about {
+        text-align: inter-character;
+        font-size: 4vw;
+    }
+    .about img {
+        width: 8vw;
+        margin: 10px 10px 0 0;
+        max-width: 80px;
     }
 
 }

@@ -78,7 +78,7 @@ export default function App() {
             <Closet hatState={hatState} toggleHat={toggleHat} changeHat={changeHat}
               topState={topState} toggleTop={toggleTop} changeTop={changeTop}
               bottomState={bottomState} toggleBottom={toggleBottom} changeBottom={changeBottom} closet={closet} />
-
+          
             <Canvas>
               <ambientLight intensity={0.4} />
               <directionalLight />
@@ -87,6 +87,7 @@ export default function App() {
                 <Model hatState={hatState} topState={topState} bottomState={bottomState} scale={1.2} position={[0, -6, 0]} />
               </Suspense>
             </Canvas>
+            
           </div>}
         </div>
       </div>
@@ -106,10 +107,10 @@ export default function App() {
                 <p className='card-type' >WEB APP</p>
                 <p className='card-name'> Shopify Feed</p>
               </div>
-              <video className="video-loop" autoPlay muted loop >
+              {/* <video className="video-loop" autoPlay muted loop playsinline defaultMuted preload="auto" oncontextmenu="return false;" >
                 <source src="./images/feed-vid.mp4" type="video/mp4" />
-              </video>
-              {/* <img className ="video-loop" src="./images/shop-gif.mp4"/> */}
+              </video> */}
+              <img className ="video-loop" src="./images/feed.gif"/>
             </>
           }
         </a>

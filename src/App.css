@@ -65,13 +65,18 @@ a, a:hover, a:focus, a:active {
   gap: 20px;
   justify-content: center;
   padding: 20px;
-
+  grid-template-rows: auto;
 
 }
+
+canvas {
+  height: 80vh;
+}
+
 .second-grid {
   display: grid;
   grid-template-columns: 95vw;
-  gap:20px;
+  gap: 20px;
   padding: 0 20px 20px 20px;
   justify-content: center;
   height: 100vh;
@@ -86,8 +91,10 @@ a, a:hover, a:focus, a:active {
   border-radius: 0.5em;
   background: rgb(251, 235, 238);
   overflow: hidden;
- 
+
 }
+
+
 
 .expand-left {
 
@@ -97,8 +104,9 @@ a, a:hover, a:focus, a:active {
   cursor: default;
   animation: big;
   animation-duration: 1s;
-  height:70vh;
-  
+  height: 65vh;
+  overflow-x: hidden;
+
 }
 
 
@@ -110,10 +118,6 @@ a, a:hover, a:focus, a:active {
 
 
 
-canvas {
-  height: 100vh;
-}
-
 .video-loop {
   display: block;
   width: 100%;
@@ -122,14 +126,15 @@ canvas {
   object-fit: cover;
   border-radius: 0.5em;
 }
-.title-card-video{
-    margin-right: 60px;
-    position: absolute;
-    font-weight: 700;
-    font-size: 50px;
+
+.title-card-video {
+  margin-right: 60px;
+  position: absolute;
+  font-weight: 700;
+  font-size: 50px;
 }
 
-.video-title{
+.video-title {
   position: absolute;
   font-weight: 700;
   font-size: 50px;
@@ -150,10 +155,6 @@ canvas {
     grid-template-columns: 60vw 35vw;
   }
 
-  canvas {
-    height: 90vh;
-  }
-
   .second-grid {
     display: grid;
     grid-template-columns: 48vw 47vw;
@@ -169,14 +170,12 @@ canvas {
     grid-column: span 2;
   }
 
-  .grid-item:last-child{
+  .grid-item:last-child {
     height: 20vh;
   }
-  .expand-left {
 
-  
-    height:80vh;
-    
+  .expand-left {
+    height: 80vh;
   }
 
 }
