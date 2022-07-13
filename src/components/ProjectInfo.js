@@ -6,8 +6,10 @@ import "./ProjectInfo.css";
 const ProjectInfo = (props) => {
     const project =
         <div className="project-info">
+            
             <div className="project-text">
-                <p style={{ fontSize: "30px", margin: "0px", padding: "10px" }}>{props.description}</p>
+                <h4 >{props.name}</h4>
+                <p >{props.description}</p>
                 <ul>
                     <li> <span className="category">SITE</span><a href={props.url} target='_blank' rel="noreferrer"> {props.url}</a></li>
                     <li> <span className="category">STACK</span><span target='_blank'> {props.stack}</span></li>
@@ -16,7 +18,6 @@ const ProjectInfo = (props) => {
 
             <div className="imgs">
                 <img src={props.img1} alt="application screenshot" />
-            
             </div>
             
         </div>

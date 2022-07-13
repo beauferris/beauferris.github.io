@@ -4,12 +4,22 @@
     text-align: justify;
     font-size: 7vw;
     padding: 40px 40px 0 40px;
-   
 }
 
+.about h1{
+    padding: 0;
+    margin: 10px;
+}
+
+.about h4{
+    padding: 0;
+    margin: 10px;
+    margin-bottom: 20px;
+    
+}
 .about img {
-    width: 15vw;
-    margin: 10px 10px 0 0;
+    width:min(max(1rem, 11vw), 80px);
+    margin: 0px 10px 0 10px;
 }
 
 .about img:hover {
@@ -23,20 +33,16 @@
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     border-radius: 20px;
-    color: white;
+    
     font-weight: 700;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
 
     .about {
         text-align: inter-character;
         font-size: 4vw;
     }
-    .about img {
-        width: 8vw;
-        margin: 10px 10px 0 0;
-        max-width: 80px;
-    }
+ 
 
 }

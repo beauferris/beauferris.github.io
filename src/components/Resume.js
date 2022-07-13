@@ -3,14 +3,15 @@ import './Resume.css';
 const Resume = () => {
     return (
         <div className='resume'>
-            <div className="head">
+            {/* <div className="head">
           
-                <a className="download-toggle" style={{ "position": "relative" }} href="/assets/hamzeyBeauferrisResume.pdf" download>Download</a>
+                <a className="download-toggle"  href="/assets/hamzeyBeauferrisResume.pdf" download>Download</a>
                 <p >Resume</p>
-            </div>
+            </div> */}
 
-            <div className="resume" style={{ "margin": "20px" }}>
-                <h2>Education</h2>
+            <div className="resume" >
+          
+               <div className='head'> <h2>Education</h2>   <a  href="/assets/hamzeyBeauferrisResume.pdf" download>Download </a></div>
                 
                 <p className='bubble'><b>BS in Computer Science with a minor in Economics,</b> University of Calgary-2020 </p>
                 

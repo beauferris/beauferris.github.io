@@ -1,20 +1,15 @@
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from "@react-three/drei";
+
 import ProjectInfo from './components/ProjectInfo';
 import Model from './components/Model'
 import './App.css'
 import About from './components/About';
-import Project from './components/Project';
 import Closet from './components/Closet';
-import Resume from './components/Resume';
 
-// import {
-//   HashRouter as Router,
-//   Routes,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import ScrollAnimation from 'react-animate-on-scroll';
+import "animate.css/animate.min.css";
+
 
 export default function App() {
 
@@ -65,73 +60,118 @@ export default function App() {
 
   return (
     <div className="App" >
-      <div className='inner-grid'>
-        <div onClick={resize} style={{ 'background-color': 'rgb(100,140,98)' }} className='grid-item' id={0}>
-          <About />
+      <main className='main-container'>
+        <header>
+          <h1>HAMZEY</h1>
+          <div>
 
+
+            <a href="https://www.linkedin.com/in/hamzey-beauferris-4bb5b3b7/" target="_blank" rel="noreferrer" >
+              <img src="/images/linkedin.svg" alt="linked in link" />
+            </a>
+            <a href="https://github.com/beauferris/" target="_blank" rel="noreferrer" >
+              <img src="./images/github.svg" alt="github link"></img>
+            </a>
+          </div>
+        </header>
+
+        <div className='inner-grid'>
+
+          <button id="grid0" className='anchor'></button>
+          <a href='#grid0' onClick={resize} className={'grid-item'} style={{ 'background-color': 'rgb(100,140,98)' }} id={8} >
+            <About />
+          </a>
+
+          <a href="#grid1" className='grid-item-model' >
+            <button id="grid1" className='anchor'></button>
+            {<div>
+              <button className="closet-toggle" onClick={toggleCloset}>DRESS ME</button>
+
+              <Closet hatState={hatState} toggleHat={toggleHat} changeHat={changeHat}
+                topState={topState} toggleTop={toggleTop} changeTop={changeTop}
+                bottomState={bottomState} toggleBottom={toggleBottom} changeBottom={changeBottom} closet={closet} />
+
+              <Canvas>
+                <ambientLight intensity={0.4} />
+                <directionalLight />
+                {/* <OrbitControls enableZoom={false}/> */}
+                <Suspense fallback={null}>
+                  <Model hatState={hatState} topState={topState} bottomState={bottomState} scale={1.2} position={[0, -6, 0]} />
+                </Suspense>
+              </Canvas>
+
+            </div>}
+          </a>
         </div>
 
-        <div className='grid-item-model' id={4}>
-          {<div>
-            <button className="closet-toggle" onClick={toggleCloset}>DRESS ME</button>
+        <ScrollAnimation
+          animateIn="animate__slideInUp"
+          animateOut="animate__slideOutDown"
 
-            <Closet hatState={hatState} toggleHat={toggleHat} changeHat={changeHat}
-              topState={topState} toggleTop={toggleTop} changeTop={changeTop}
-              bottomState={bottomState} toggleBottom={toggleBottom} changeBottom={changeBottom} closet={closet} />
-          
-            <Canvas>
-              <ambientLight intensity={0.4} />
-              <directionalLight />
-              {/* <OrbitControls enableZoom={false}/> */}
-              <Suspense fallback={null}>
-                <Model hatState={hatState} topState={topState} bottomState={bottomState} scale={1.2} position={[0, -6, 0]} />
-              </Suspense>
-            </Canvas>
-            
-          </div>}
-        </div>
-      </div>
 
-      <div id="grid" className='second-grid'>
+        >
+          <div id="grid" className='second-grid'>
 
-        <a href='#2' onClick={currentGrid === 2 ? 'none' : resize} className={currentGrid === 2 ? 'expand-left' : 'grid-item'} id={2}>
-          {currentGrid === 2 ? <>
-            <Project href='#1' name="Shopify Feed" img="" />
-            <ProjectInfo style={{ "padding": "0" }} url="https://shopifyfeed.herokuapp.com/"
-              name="Shopify Feed"
-              img1="/images/feed1.png"
-              stack="React, MongoDb, NodeJs"
-              description="Web App that allows you to create a product feed from you're favorite shopify shops." /></> :
-            <>
-              <div className='title-card-video'>
-                <p className='card-type' >WEB APP</p>
-                <p className='card-name'> Shopify Feed</p>
+            <button id="grid2" className='anchor'></button>
+            <a href='#grid2' onClick={currentGrid === 2 ? 'none' : resize} className={currentGrid === 2 ? 'expand-left' : 'grid-item'} id={2}>
+
+              {currentGrid === 2 ? <>
+
+                <ProjectInfo style={{ "padding": "0" }} url="https://shopifyfeed.herokuapp.com/"
+                  name="Shopify Feed"
+                  img1="./images/feed1.png"
+                  stack="React, MongoDb, NodeJs"
+                  description="Personal app I created for myself to manage all the shopify shops I like to visit in one place. Uses Shopify's JSON API and checks for new products for 30+ shops. Creates a feed with a responsive masonry layout that has infinite scroll/pagination. " /></> :
+                <>
+                  <div className='title-card-video'>
+                    <p className='card-name'> SHOPIFY FEED</p>
+                  </div>
+                  <img className="video-loop" src="./images/feed.gif" alt="shopify feed" />
+                </>
+              }
+
+            </a>
+
+            <ScrollAnimation
+              animateIn="animate__slideInUp"
+              animateOut="animate__slideOutDown"
+              delay={.5}
+            >
+
+              <div href='#grid3' onClick={currentGrid === 3 ? 'none' : resize} className={currentGrid === 3 ? 'expand-left' : 'grid-item'} id={3}>
+                <button id="grid3" className='anchor'></button>
+                {currentGrid === 3 ? <>
+
+                  <ProjectInfo style={{ "padding": "0" }} url="https://chopchopbarbershop.herokuapp.com/"
+                    name="Booking App"
+                    img1="./images/chop0.png"
+                    stack="React, MongoDb, NodeJs"
+                    description="Web App for creating appointments." /></> :
+                  <>
+
+                    <div className='title-card-video'>
+                      <p className='card-name'> BOOKING APP</p>
+                    </div>
+                    <img className="video-loop" src="./images/chop0.png" alt="booking app" />
+                  </>
+                }
               </div>
-              {/* <video className="video-loop" autoPlay muted loop playsinline defaultMuted preload="auto" oncontextmenu="return false;" >
-                <source src="./images/feed-vid.mp4" type="video/mp4" />
-              </video> */}
-              <img className ="video-loop" src="./images/feed.gif"/>
-            </>
-          }
-        </a>
 
-        <a href='#3' onClick={currentGrid === 3 ? 'none' : resize} className={currentGrid === 3 ? 'expand-left' : 'grid-item'} id={3}>
-          {currentGrid === 3 ? <>
-            <Project name="Booking" img="" />
-            <ProjectInfo style={{ "padding": "0" }} url="https://chopchopbarbershop.herokuapp.com/"
-              name="Booking App"
-              img1="./images/chop0.png"
-              stack="React, MongoDb, NodeJs"
-              description="Web App for creating appointments." /></> :
+            </ScrollAnimation>
 
-            <Project name="Booking App" />
-          }
-        </a>
-        <a href='#1' onClick={currentGrid === 1 ? 'none' : resize} className={currentGrid === 1 ? 'expand-left' : 'grid-item'} id={1}>
-          {currentGrid === 1 ? <Resume /> : <h2 style={{ "fontSize": "40px" }}>Resume</h2>}</a>
+            {/* <a id="grid4" className='anchor'></a>
+        <a href='#grid4' onClick={currentGrid === 1 ? 'none' : resize} className={currentGrid === 1 ? 'expand-left' : 'grid-item'} id="1">
+          {currentGrid === 1 ? <Resume /> : <h2 style={{ "fontSize": "40px" }}>RESUME</h2>
+          }</a> */}
 
-      </div>
-      {/* <p className='foot'>© 2021 Hamzey Beauferris. All Rights Reserved.</p> */}
+          </div>
+        </ScrollAnimation>
+      </main>
+
+      <footer>
+        <p className='foot'>© 2022 Hamzey Beauferris. All Rights Reserved.</p>
+      </footer>
+
 
     </div>
 

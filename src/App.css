@@ -1,3 +1,12 @@
+:root {
+  --container-max-width: 90rem;
+  --container-spacing-desktop: 1.5rem;
+  --container-spacing-tablet: 1rem;
+  --container-spacing-mobile: 1rem;
+  --grid-gap: 1.25rem;
+  --border-radius: 0.5rem
+}
+
 /* animate components */
 @keyframes left {
   from {
@@ -24,6 +33,145 @@
   animation-duration: 1s;
 }
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  width: 95vw;
+  display: flex;
+  justify-self: center;
+  padding: 0;
+  gap: 1.25rem;
+ 
+}
+
+header h1{
+   font-weight: 900;
+}
+
+.main-container {
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+ 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+.anchor {
+  visibility: hidden;
+  position: absolute;
+  transform: translateY(-50px);
+}
+
+/* main grid */
+.inner-grid {
+  display: grid;
+  grid-template-columns: 95vw;
+  justify-content: center;
+  width: 100%;
+  gap: 1.25rem;
+
+  padding-bottom: 2rem;
+
+
+}
+
+.second-grid {
+  display: grid; 
+  grid-template-columns: 95vw;
+  justify-content: center;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+  
+}
+
+
+.grid-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  border-radius: 0.5em;
+  background: rgb(251, 235, 238);
+  overflow: hidden;
+  height: 65vh;
+
+
+}
+
+
+
+
+.expand-left {
+  border-radius: 0.5em;
+  background: rgb(251, 235, 238);
+
+  cursor: default;
+  animation: big;
+  animation-duration: 1s;
+  overflow-x: hidden;
+  font-size: min(max(1rem, 5vw), 30px);
+}
+
+
+.grid-item-model {
+  border-radius: 0.5em;
+  background: rgb(251, 235, 238);
+  padding: 3px;
+  height: 100%;
+}
+
+canvas {
+  height: 80vh;
+}
+
+.video-loop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* Scale video to container size */
+  object-fit: cover;
+  border-radius: 0.5em;
+
+}
+a img{
+  width: 50px;
+  margin-left: 10px;
+}
+a img:hover {
+
+  transform: scale(1.1);
+}
+
+header{ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.title-card-video {
+  position: absolute;
+  font-weight: 700;
+  font-size: 50px;
+
+}
+
+.video-title {
+  position: absolute;
+  font-weight: 700;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+
 .download-toggle {
   display: flex;
   align-items: center;
@@ -38,130 +186,50 @@
   width: 100px;
   margin: 10px;
   cursor: pointer;
+  font-size: 20px;
 }
+
 
 .foot {
   display: flex;
   justify-content: center;
   opacity: 0.4;
-
-  margin: 0;
-  padding: 2px;
-
+  margin: 10px;
 }
 
-a, a:hover, a:focus, a:active {
-  text-decoration: none;
-  color: inherit;
+footer{
+  padding: 30px;
 }
-
-
-
-/* main grid */
-
-.inner-grid {
-  display: grid;
-  grid-template-columns: 95vw;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  grid-template-rows: auto;
-
-}
-
-canvas {
-  height: 80vh;
-}
-
-.second-grid {
-  display: grid;
-  grid-template-columns: 95vw;
-  gap: 20px;
-  padding: 0 20px 20px 20px;
-  justify-content: center;
-  height: 100vh;
-}
-
-.grid-item {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3px;
-  border-radius: 0.5em;
-  background: rgb(251, 235, 238);
-  overflow: hidden;
-
-}
-
-
-
-.expand-left {
-
-  border-radius: 0.5em;
-  background: rgb(251, 235, 238);
-  overflow: scroll;
-  cursor: default;
-  animation: big;
-  animation-duration: 1s;
-  height: 65vh;
-  overflow-x: hidden;
-
-}
-
-
-.grid-item-model {
-  border-radius: 0.5em;
-  background: rgb(251, 235, 238);
-
-}
-
-
-
-.video-loop {
-  display: block;
-  width: 100%;
-  height: 100%;
-  /* Scale video to container size */
-  object-fit: cover;
-  border-radius: 0.5em;
-}
-
-.title-card-video {
-  margin-right: 60px;
-  position: absolute;
-  font-weight: 700;
-  font-size: 50px;
-}
-
-.video-title {
-  position: absolute;
-  font-weight: 700;
-  font-size: 50px;
-  margin: 0;
-  padding: 0;
-}
-
-/* .expand-left:last-child {
-  grid-row: span 4; 
-} */
-
 
 /* fullscreen mode */
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
 
   .inner-grid {
     display: grid;
-    grid-template-columns: 60vw 35vw;
+    grid-template-columns: 60vw 33vw;
+    height: 85vh;
   }
 
   .second-grid {
     display: grid;
-    grid-template-columns: 48vw 47vw;
-    grid-auto-flow: dense;
+    grid-template-columns: 46.5vw 46.5vw;
+    height: 65vh;
   }
 
-  .grid-item:last-child {
+  .inner-grid .grid-item:first-of-type{
+    height: 100%;
+  }
+  .grid-item{
+    height: 65vh;
+    overflow: hidden;
+  }
+
+  .expand-left{
+    height: 65vh;
+  }
+
+
+  /* .grid-item:last-child {
     grid-column: span 2;
     grid-row: span 2;
   }
@@ -172,10 +240,5 @@ canvas {
 
   .grid-item:last-child {
     height: 20vh;
-  }
-
-  .expand-left {
-    height: 80vh;
-  }
-
+  } */
 }
