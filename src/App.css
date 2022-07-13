@@ -141,11 +141,11 @@ canvas {
   border-radius: 0.5em;
 
 }
-a img{
+header a img{
   width: 50px;
   margin-left: 10px;
 }
-a img:hover {
+header a img:hover {
 
   transform: scale(1.1);
 }
