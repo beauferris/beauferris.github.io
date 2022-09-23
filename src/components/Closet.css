@@ -1,77 +1,78 @@
 .closet {
-    margin-top: 110px;
-    z-index: 1;
-    width: 95vw;
-    position: absolute;
-    overflow: hidden;
-}
-
-.hide {
-    visibility: hidden;
-    overflow: hidden;
-}
-
-.closet-hide {
-    margin-top: 110px;
-    z-index: 1;
-    max-width: 35vw;
-    position: absolute;
-    overflow: hidden;
-    visibility: hidden;
-}
-
-.closet-buttons {
-    overflow: auto;
-    white-space: nowrap;
     display: flex;
-}
+    flex-direction: column;
 
-.closet-buttons button {
-    margin: 10px;
-    background: white;
+    z-index: 11;
+    background-color: white;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+
+
     border: 1px solid black;
-    border-radius: 20px;
-    cursor: pointer;
+
+    width: 20vw;
+    min-width: 150px;
+    max-width: 240px;
+    height: 92vh;
+    margin: 20px;
+    padding: 20px;
+    overflow: scroll;
+   
+
 }
 
-.closet-buttons img {
-    width: 20vw;
+
+.closet-header {
+    display: flex;
+    
+    justify-content: space-between;
     
 }
 
-.closet-toggle {
-    background: white;
-    position: absolute;
-    z-index: 2;
-    outline: none;
+.hide {
+    display: none;
 
-    border: 1px solid black;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    margin: 10px;
-    cursor: pointer;
 }
-/* .closet-toggle:after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 0;
-    z-index: 1;
+
+.closet-hide {
+    
+    display: none;
+}
+
+.closet-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    
+
+}
+
+
+.closet-buttons button {
+
+    font-size: large;
+    font-weight: 900;
+
+   
+    padding: 20px;
+   
+    background-color: white;
+    cursor: pointer;
 
     border: 1px solid black;
-    border-width: 20px 20px 0;
-    bottom: -20px;
-    left: 50%;
-    margin-left: -20px;
-} */
+    border-top: none;
+}
 
-@media (min-width: 800px) {
-    .closet {
-        max-width: 35vw;
-    }
-    .closet-buttons img {
-        width: 10vw;
-        
-    }
+
+.closet-buttons button:first-child {
+    border-top: 1px solid black;
+}
+
+
+.closet-buttons img {
+    width: 100%;
+    border: none;
 }
