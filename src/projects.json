@@ -1,5 +1,0 @@
-[
-    { id: 0, type: "3d", title: "DRESS ME", url: "CLOSET",stack: ["React", "Three.js", "Blender", ], p1:" Interactive 3D avatar using three.js. Inspired by character select screens of old fighting games." },
-    { id: 1, src: "./images/feed.gif", url: "https://shopifyfeed.herokuapp.com/", type: "Web App", stack: ["React", "Material UI","MongoDb", "Node.js"], title: "SHOPIFY FEED", p1: "Personal app I created for myself to manage all the shopify shops I like to visit in one place. Uses Shopify's JSON API and checks for new products for 30+ shops. Creates a feed with a responsive masonry layout that has infinite scroll/pagination. " },
-    
-]

@@ -4,16 +4,67 @@ import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { useState } from "react";
 
-const Closet = ({ closet, toggleCloset, expand, topState, hatState, bottomState, position, changeBottom, changeHat, changeTop, zoomBottom, zoomHead, zoomTop }) => {
+const Closet = () => {
 
+  //closet state
+  const [hatState, setHatState] = useState({ isOpen: false, current: "red-hat" })
+  const [topState, setTopState] = useState({ isOpen: false, current: "jacket" })
+  const [bottomState, setBottomState] = useState({ isOpen: false, current: "pants" })
+  const [position, setPosition] = useState([0, -5, 0])
 
+  const [closet, setCloset] = useState(false);
 
+  const reposition = () =>{
+    setPosition([0, -5, 0]);
+    setBottomState({ ...bottomState, isOpen: false });
+    setTopState({ ...topState, isOpen: false });
+    setHatState({ ...hatState, isOpen: false });
+   
+}
 
+  const zoomHead = () => {
+    setPosition([0.5, -6.5, 2]);
+    setHatState({ ...hatState, isOpen: !hatState.isOpen });
+    setBottomState({ ...bottomState, isOpen: false });
+    setTopState({ ...topState, isOpen: false });
+}
+
+const zoomTop = () => {
+    setPosition([0.5, -5, 2.5]);
+    setTopState({ ...topState, isOpen: !topState.isOpen })
+    setBottomState({ ...bottomState, isOpen: false });
+    setHatState({ ...hatState, isOpen: false });
+}
+
+const zoomBottom = () => {
+    setPosition([0.5, -4, 2.5]);
+    setBottomState({ ...bottomState, isOpen: !bottomState.isOpen })
+    setHatState({ ...hatState, isOpen: false });
+    setTopState({ ...topState, isOpen: false });
+}
+
+const changeHat = (event) => {
+    setHatState({ ...hatState, current: event.currentTarget.value })
+}
+
+const changeTop = (event) => {
+    setTopState({ ...topState, current: event.currentTarget.value })
+}
+
+const changeBottom = (event) => {
+    setBottomState({ ...bottomState, current: event.currentTarget.value })
+}
+
+const toggleCloset = () => {
+    setCloset(!closet);
+   
+    reposition(); 
+}
 
   return (
 
     <>
-      < Canvas style={{ "backgroundColor": "rgb(248,236,238)" }}>
+      < Canvas >
         <ambientLight intensity={0.4} />
         <directionalLight />
         {/* {toggle?  <OrbitControls enableZoom={false}></OrbitControls>: null } */}
@@ -22,7 +73,7 @@ const Closet = ({ closet, toggleCloset, expand, topState, hatState, bottomState,
         </Suspense>
       </Canvas >
 
-      {expand ?
+     
 
 
         <div className={closet === false ? "closet-hide" : "closet"}>
@@ -48,7 +99,7 @@ const Closet = ({ closet, toggleCloset, expand, topState, hatState, bottomState,
           </div>
         </div>
 
-        : ""}
+       
     </>
 
   )

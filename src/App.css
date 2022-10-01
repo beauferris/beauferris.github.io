@@ -99,11 +99,5 @@ h3 {
 @media (min-width: 1000px) {
 
   
-  .flip-grid {
-    
-    grid-template-columns: 1fr 1fr;
- 
-    
-  }
   
 }
