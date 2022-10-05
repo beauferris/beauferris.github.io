@@ -26,8 +26,7 @@ const Card = (props) => {
 
             document.body.style.top = '-' + window.scrollY + 'px';
             document.body.style.position = 'fixed';
-            console.log(viewportOffset.left, viewportOffset.right, viewportOffset.top);
-            setStyle({ transform: `translate( ${viewportOffset.left * -1}px,  ${viewportOffset.top * -1}px)` })
+            setStyle({ transform:  'translate('+ viewportOffset.left * -1 +'px, '+ viewportOffset.top * -1 +'px)'})
 
         }
 
@@ -54,12 +53,7 @@ const Card = (props) => {
                 </div>
 
                 <div className='card-header' >
-                    <div>
-                        <h4>{props.type}</h4>
-                        <h1>{props.title}</h1>
-                    </div>
-
-
+                    <h2>{props.title}</h2>
                 </div>
 
                 {props.id === 0 ? "" :
@@ -83,11 +77,8 @@ const Card = (props) => {
                 <div className='imgs'>
 
                     <img className="img" src={props.img1} alt="screenshot"></img>
-                    <img className="img" src={props.img2} alt="screenshot"></img>
 
                 </div>
-
-
 
                 <article className='stack-div' >
 
@@ -95,17 +86,12 @@ const Card = (props) => {
                         Stack
                     </h3>
 
-
                     <div className='stack-wrapper'>
                         {props.stack.map((stack, index) => {
                             return (<p className='stack' key={index}>{stack}</p>)
                         })}
                     </div>
-
                 </article>
-
-
-
             </div >
         </div>
     )

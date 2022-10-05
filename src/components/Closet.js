@@ -74,7 +74,7 @@ const Closet = () => {
       
       </Canvas >
 
-      <button className='closet-toggle-button' onClick={toggleCloset}>OPEN CLOSET
+      <button className='closet-toggle-button' onClick={toggleCloset}>CLOSET
         
         </button>
      

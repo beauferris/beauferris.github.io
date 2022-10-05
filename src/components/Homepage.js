@@ -13,9 +13,9 @@ const Homepage = () => {
                 </div>
             </header>
 
-            <div className='flip-grid'  >
-                <CardList />
-            </div>
+
+            <CardList />
+
 
 
         </div>
