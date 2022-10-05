@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
 
-
+    border-radius: 10px;
 
     border: 1px solid black;
 
@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 30px;
-    
+    border-radius: 10px;
 
 }
 
@@ -64,15 +64,30 @@
 
     border: 1px solid black;
     border-top: none;
+   
 }
 
 
 .closet-buttons button:first-child {
     border-top: 1px solid black;
+    
 }
 
 
 .closet-buttons img {
     width: 100%;
     border: none;
+}
+
+.closet-toggle-button{
+    position: absolute;
+    right: 0;
+    
+    border: none;
+    font-size: larger;
+    cursor: pointer;
+    padding: 10px;
+    margin: 30px;
+    font-weight: 900;
+    border-radius: 10px;
 }

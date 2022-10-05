@@ -26,8 +26,8 @@ const Card = (props) => {
 
             document.body.style.top = '-' + window.scrollY + 'px';
             document.body.style.position = 'fixed';
-
-            setStyle({ transform: 'translate(' + viewportOffset.left * -1 + 'px,' + viewportOffset.top * -1 + 'px)' })
+            console.log(viewportOffset.left, viewportOffset.right, viewportOffset.top);
+            setStyle({ transform: `translate( ${viewportOffset.left * -1}px,  ${viewportOffset.top * -1}px)` })
 
         }
 
@@ -38,14 +38,15 @@ const Card = (props) => {
         <div className='card-wrapper' >
             <div className={current === true ? 'card open' : 'card'}
                 onClick={current === true ? null : expand} style={style}>
-                
-                {current===true?<button className='cancel' onClick={expand} style={{ display: props.display }}>x</button>:null}
-               
-                {
-                    props.myModel ? <div className='model' style={{ display: 'block' }}>{props.myModel} </div> : ""
-                }
+
+                {current === true ? <button className='cancel' onClick={expand} style={{ display: props.display }}>x</button> : null}
+
 
                 <div className='card-top'>
+                    {
+                        props.myModel ? <div className='model' style={{ display: 'block' }}>{props.myModel} </div> : ""
+                    }
+
                     {props.id === 0 ? "" :
                         <div className='img' style={{ 'backgroundImage': `url(${props.img})` }} alt='' ></div>
                     }
@@ -61,15 +62,14 @@ const Card = (props) => {
 
                 </div>
 
-
-                <article className='live-site'  >
-                    <h4>{props.arrow}</h4>
-                    <a className='arrow-text' href={props.id === 0 ? props.closet : props.url} onClick={props.id === 0 ? props.closet : null} target="blank"  >
-                        <img className='arrow' src="/images/arrow.svg" alt=""></img>
-                    </a>
-                </article>
-
-
+                {props.id === 0 ? "" :
+                    <article className='live-site'  >
+                        <h4>{props.arrow}</h4>
+                        <a className='arrow-text' href={props.id === 0 ? props.closet : props.url} onClick={props.id === 0 ? props.closet : null} target="blank"  >
+                            <img className='arrow' src="/images/arrow.svg" alt=""></img>
+                        </a>
+                    </article>
+                }
 
                 <div className="description" >
                     <article >
@@ -78,6 +78,32 @@ const Card = (props) => {
                         <p>{props.p2} </p>
                     </article>
                 </div>
+
+
+                <div className='imgs'>
+
+                    <img className="img" src={props.img1} alt="screenshot"></img>
+                    <img className="img" src={props.img2} alt="screenshot"></img>
+
+                </div>
+
+                <article className='stack-wrapper' >
+
+                    <h3>
+                        Stack
+                    </h3>
+
+
+
+
+                    {props.stack.map((stack, index) => {
+                        return (<p className='stack' key={index}>{stack}</p>)
+                    })}
+
+
+                </article>
+
+
 
             </div >
         </div>

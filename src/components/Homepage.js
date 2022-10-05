@@ -3,7 +3,6 @@ import './Model.css';
 import CardList from './CardList';
 const Homepage = () => {
 
-
     return (
         <div className='homepage'>
             <header className='header'>
@@ -13,11 +12,12 @@ const Homepage = () => {
                     <a target="blank" href='https://github.com/beauferris'><img alt="" src="/images/github.svg"></img></a>
                 </div>
             </header>
-            <div >
-                <div className='flip-grid'  >
-                  <CardList/>
-                </div>
+
+            <div className='flip-grid'  >
+                <CardList />
             </div>
+
+
         </div>
 
     )
