@@ -87,19 +87,20 @@ const Card = (props) => {
 
                 </div>
 
-                <article className='stack-wrapper' >
+
+
+                <article className='stack-div' >
 
                     <h3>
                         Stack
                     </h3>
 
 
-
-
-                    {props.stack.map((stack, index) => {
-                        return (<p className='stack' key={index}>{stack}</p>)
-                    })}
-
+                    <div className='stack-wrapper'>
+                        {props.stack.map((stack, index) => {
+                            return (<p className='stack' key={index}>{stack}</p>)
+                        })}
+                    </div>
 
                 </article>
 

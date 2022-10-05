@@ -109,20 +109,25 @@
 
 .stack {
   
-
+  font-size: small;
   border-radius: 5px;
   margin-bottom: 30px;
   width: fit-content;
   padding: 3px;
   margin-left: 10px;
+  margin: 3px;
   background-color: burlywood;
 }
 
 .stack-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   text-align: start;
-  margin: 20px;
+ 
 
+}
+.stack-div{
+  margin: 20px;
 }
 
 .imgs {
@@ -141,6 +146,14 @@
     flex-direction: row;
     width: fit-content;
     justify-self: center;
+  
+  }
+
+  .stack-wrapper {
+    display: flex;
+    grid-template-columns: 1fr;
+    text-align: start;
+   
   
   }
 }
