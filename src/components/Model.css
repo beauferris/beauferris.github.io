@@ -6,8 +6,21 @@ canvas{
 
 }
 
+
+/* .open .model{
+    height: 450px;
+    width: 50vw;
+} */
+
+
 .model{
     height: 450px;
-    width: 99vw;
+    width: 90vw;
 }
 
+@media (min-width: 1000px) {
+    .model{
+        height: 450px;
+        width: 50vw;
+    }
+  }

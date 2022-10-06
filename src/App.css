@@ -8,7 +8,11 @@
 }
 .card-list{
   margin: 20px;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
+
 h2 {
   font-weight: 900;
 
@@ -19,22 +23,11 @@ p {
   font-weight: 500;
 }
 
-
 body {
   width: 100%;
   margin: 0;
   padding: 0;
-
-  
 }
-
-
-
-
-
-
-
-
 
 a, a:hover, a:focus, a:active {
   text-decoration: none !important;
@@ -53,7 +46,6 @@ header {
 
 
 }
-
 
 header h1 {
   font-weight: 900;
@@ -78,6 +70,8 @@ header a img:hover {
 
 }
 
+
+
 h1 {
   font-weight: 900;
 }
@@ -89,10 +83,8 @@ h3 {
 
 
 @media (min-width: 1000px) {
-  /* .flip-grid {
+  .card-list{
    
     grid-template-columns: 1fr 1fr;
-    
   }
-   */
 }

@@ -1,6 +1,6 @@
-
 import './Model.css';
 import CardList from './CardList';
+
 const Homepage = () => {
 
     return (
@@ -12,14 +12,8 @@ const Homepage = () => {
                     <a target="blank" href='https://github.com/beauferris'><img alt="" src="/images/github.svg"></img></a>
                 </div>
             </header>
-
-
             <CardList />
-
-
-
         </div>
-
     )
 }
 

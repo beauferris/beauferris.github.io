@@ -1,65 +1,37 @@
-import { useState } from 'react';
 import './Card.scss';
 
-const Card = (props) => {
-
-    let styleObject = {
-        transform: 'translate(0px,0px)'
-    }
-
-    const [style, setStyle] = useState(styleObject);
-    const [current, setCurrent] = useState(false);
-
-    const expand = (event) => {
-        setCurrent(prev => !prev);
-        let viewportOffset = event.target.getBoundingClientRect();
-
-        if (current === true) {
-
-            setStyle({ transform: 'translate(0px,0px)' });
-
-            let scrollY = document.body.style.top;
-            document.body.style.position = '';
-            document.body.style.top = '';
-            window.scrollTo(0, parseInt(scrollY) * -1);
-        } else {
-
-            document.body.style.top = '-' + window.scrollY + 'px';
-            document.body.style.position = 'fixed';
-            setStyle({ transform:  'translate('+ viewportOffset.left * -1 +'px, '+ viewportOffset.top * -1 +'px)'})
-
-        }
-
-
-    }
+const Card = ({ className, onClick, model, id, img, title, arrow, closet, stack, img1, p1, p2, url }) => {
 
     return (
-        <div className='card-wrapper' >
-            <div className={current === true ? 'card open' : 'card'}
-                onClick={current === true ? null : expand} style={style}>
+        <div className='card-wrapper'  >
+            <div className={className} onClick={className === 'card open' ? null : () => onClick(id)} >
 
-                {current === true ? <button className='cancel' onClick={expand} style={{ display: props.display }}>x</button> : null}
-
+                {className==="card open" ? <button className='cancel' onClick={() => onClick(id)} >x</button>
+                : null}
 
                 <div className='card-top'>
                     {
-                        props.myModel ? <div className='model' style={{ display: 'block' }}>{props.myModel} </div> : ""
+                        model ? <div className='model' style={{ display: 'block' }}>{model} </div> : ""
                     }
 
-                    {props.id === 0 ? "" :
-                        <div className='img' style={{ 'backgroundImage': `url(${props.img})` }} alt='' ></div>
+                    {id === 0 ? "" :
+                        <div className='img' style={{ 'backgroundImage': `url(${img})` }} alt='' ></div>
                     }
 
                 </div>
 
                 <div className='card-header' >
-                    <h2>{props.title}</h2>
+                    <div>
+                        <h2>{title}</h2>
+                    </div>
+
+
                 </div>
 
-                {props.id === 0 ? "" :
+                {id === 0 ? "" :
                     <article className='live-site'  >
-                        <h4>{props.arrow}</h4>
-                        <a className='arrow-text' href={props.id === 0 ? props.closet : props.url} onClick={props.id === 0 ? props.closet : null} target="blank"  >
+                        <h4>{arrow}</h4>
+                        <a className='arrow-text' href={id === 0 ? closet : url} onClick={id === 0 ? closet : null} target="blank"  >
                             <img className='arrow' src="/images/arrow.svg" alt=""></img>
                         </a>
                     </article>
@@ -68,15 +40,15 @@ const Card = (props) => {
                 <div className="description" >
                     <article >
                         <h3>Project</h3>
-                        <p>{props.p1}</p>
-                        <p>{props.p2} </p>
+                        <p>{p1}</p>
+                        <p>{p2} </p>
                     </article>
                 </div>
 
 
                 <div className='imgs'>
 
-                    <img className="img" src={props.img1} alt="screenshot"></img>
+                    <img className="img" src={img1} alt="screenshot"></img>
 
                 </div>
 
@@ -87,7 +59,7 @@ const Card = (props) => {
                     </h3>
 
                     <div className='stack-wrapper'>
-                        {props.stack.map((stack, index) => {
+                        {stack.map((stack, index) => {
                             return (<p className='stack' key={index}>{stack}</p>)
                         })}
                     </div>
