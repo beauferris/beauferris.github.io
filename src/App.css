@@ -6,7 +6,20 @@
   --grid-gap: 1.25rem;
   --border-radius: 0.5rem
 }
-.card-list{
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+
+.spacer {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.card-list {
   margin: 20px;
   gap: 20px;
   display: grid;
@@ -19,8 +32,29 @@ h2 {
 }
 
 p {
-
+  font-size: 22px;
   font-weight: 500;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.intro h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+
+.intro span {
+  font-size: x-large;
+}
+
+.intro h3 {
+  margin: 0;
+  padding: 0;
+  color: #aaa;
 }
 
 body {
@@ -31,34 +65,35 @@ body {
 
 a, a:hover, a:focus, a:active {
   text-decoration: none !important;
-  color: inherit;
+
+  color: #1982FC;
 }
+
 
 header {
-
   display: flex;
   align-items: center;
-
   justify-content: space-between;
   padding: 0;
-
-  margin: 0 20px 0 20px;
-
-
+  margin: 0px 20px 20px 20px;
+  margin-top: 20px;
 }
 
-header h1 {
+header h1, a {
   font-weight: 900;
+  margin: 0;
+
+  padding: 0;
 }
 
 header a img {
-  width: max(5vw, 40px);
+  width: max(3vw, 40px);
   margin-left: 5px;
+  padding: 0;
   cursor: pointer;
 }
 
 header a img:hover {
-
   transform: scale(1.1);
 }
 
@@ -67,13 +102,20 @@ header a img:hover {
   justify-content: center;
   opacity: 0.4;
   margin: 10px;
-
+  padding: 10px;
 }
 
-
+.intro h1 {
+  font-size: xxx-large;
+}
 
 h1 {
   font-weight: 900;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
 }
 
 h3 {
@@ -83,8 +125,8 @@ h3 {
 
 
 @media (min-width: 1000px) {
-  .card-list{
-   
+  .card-list {
+
     grid-template-columns: 1fr 1fr;
   }
 }
