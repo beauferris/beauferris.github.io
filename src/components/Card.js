@@ -1,22 +1,21 @@
 /* eslint-disable react/prop-types */
 import "./Card.scss";
-import Banner from "./UI/Banner";
+
 const Card = ({
   className,
   onClick,
-  model,
+  type,
   id,
   img,
   title,
   stack,
   img1,
   img2,
-
-  buttonTitle,
+  // buttonTitle,
   p1,
   p2,
   p3,
-  url,
+  // url,
 }) => {
   return (
     <div className="card-wrapper">
@@ -31,19 +30,15 @@ const Card = ({
         ) : null}
 
         <div className="card-top">
-          {id === 0 ? (
-            <div className="model" style={{ display: "block" }}>
-              {model}{" "}
-            </div>
-          ) : (
-            <div
-              className="img"
-              style={{ backgroundImage: `url(${img})` }}
-              alt=""
-            >
-              <Banner title={title} url={url} button={buttonTitle} />
-            </div>
-          )}
+          <div
+            className="img"
+            style={{ backgroundImage: `url(${img})` }}
+            alt=""
+          >
+            <h2>{title}</h2>
+
+            <h4>{type}</h4>
+          </div>
         </div>
         <div className="content-wrapper">
           <div className="main-content">

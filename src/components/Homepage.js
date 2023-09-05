@@ -1,25 +1,31 @@
-import "./Model.css";
 import CardList from "./CardList";
 
 const Homepage = () => {
   return (
     <div className="homepage">
-      <header className="header">
-        <h2>Hamzey</h2>
-        <div>
-          <a target="blank" href="https://www.linkedin.com/in/beauferris/">
-            <img alt="" src="/images/linkedin.svg"></img>
-          </a>
-          <a target="blank" href="https://github.com/beauferris">
-            <img alt="" src="/images/github.svg"></img>
-          </a>
-        </div>
-      </header>
-      <div className="intro">
-        <h1>Frontend Developer</h1>
-        <h3>
-          Based in Canada <span>&#127464;&#127462;</span>
-        </h3>
+      <div className="header">
+        <img style={{ width: "300px" }} src="/images/logo.png"></img>
+
+        {/* <header className="header">
+          <div>
+            <a target="blank" href="https://www.linkedin.com/in/beauferris/">
+              <img
+                style={{ width: "20px", marginRight: "5px" }}
+                alt="linkedi icon"
+                src="/images/linkedin.svg"
+              ></img>
+              Linkedin
+            </a>
+            <a target="blank" href="https://github.com/beauferris">
+              <img
+                style={{ width: "20px", marginRight: "5px" }}
+                alt="github icon"
+                src="/images/github.svg"
+              ></img>
+              Github
+            </a>
+          </div>
+        </header> */}
       </div>
       <CardList />
       <div className="spacer"></div>

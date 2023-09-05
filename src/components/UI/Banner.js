@@ -6,7 +6,7 @@ const Banner = ({ title, url, button }) => {
         <h2>{title}</h2>
       </div>
       <a className="closet-toggle-button" href={url} target="blank">
-        {button}
+        {button} &#8594;
       </a>
     </div>
   );

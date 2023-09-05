@@ -1,5 +1,5 @@
 import Card from "./Card";
-import Closet from "./Closet";
+
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import "./Card.scss";
 import { gsap } from "gsap/index";
@@ -8,32 +8,30 @@ import CustomEase from "gsap/CustomEase";
 
 let data = [
   {
-    id: 0,
-    type: "3d",
-    title: "Dress Me",
-    stack: ["React", "Three.js", "Blender"],
-    p1: `I have always been interested in art since I was a kid. As I got older I found it harder to find time to sketch. Once I learned about 3d modeling and blender I thought it would be the perfect way to get back into it.`,
-    p2: "This project started with me trying to learn blender in my free time for fun. Once I found out about three.js I started thinking of ways to incorporate the two. Eventually I started  playing with changing his clothes and moving the camera around. I wanted to create an interactive avatar, similar to something you would see in a video game.",
-    p3: "Im going to continue to use this project to improve my 3d modeling/three.js skills. In the future I would like to add more clothing options and add animations to the model and camera.",
-    img1: "./images/closet/model.png",
-    img2: "./images/closet/model1.png",
-    img3: "./images/closet/model2.png",
-    img4: "./images/closet/model3.png",
-  },
-
-  {
     id: 1,
-    src: "/images/feed.gif",
-    buttonTitle: "LIVE",
-    img1: "./images/feed1.png",
-    img2: "./images/feed2.png",
-    url: "https://shopifyfeed.herokuapp.com/",
-    type: "Web App",
-    stack: ["React", "Material UI", "MongoDb", "Node"],
-    title: "Shopify Feed",
-    p1: "After graduating university I was spending alot of time doing projects to learn new frameworks/technologies. I was getting frustrated making generic apps that I would never actually use. I wanted to apply my skills to something that would make my life easier, thats when I got the idea for this app.",
-    p2: "I found myself spending alot of time browsing online shops for their new arrivals. I wanted to have a single instagram-like feed instead that would combined all these new arrivals together.",
-    p3: "I ended up using Shopify's JSON api to get product data from shops I frequent. It checks for new items every couple of minutes and adds them to a database. Then uses this data to create a feed with a responsive masonry layout that has infinite scroll/pagination. You can also login using auth0 and customize you're own feed with the shops i've added.",
+    src: "",
+    // buttonTitle: "Track Pack",
+    img1: "",
+    img2: "",
+    url: "",
+    type: "Mobile App",
+    stack: ["Flutter", "Firebase"],
+    title: "Track Pack",
+    p2: "",
+    p3: "",
+  },
+  {
+    id: 2,
+    src: "",
+    buttonTitle: "Visit Site",
+    img1: "",
+    img2: "",
+    url: "",
+    type: "Web Design",
+    stack: ["Wordpress"],
+    title: "DB Driving School",
+    p1: "",
+    p2: "",
   },
 ];
 
@@ -53,7 +51,7 @@ const CardList = () => {
   //Gets all the children of our element
   const q = gsap.utils.selector(boxRef);
 
-  CustomEase.create("apple", ".62,.61,.45,1.15");
+  CustomEase.create("apple", ".62,.61,.45,1");
 
   useEffect(() => {
     toggle === true
@@ -73,7 +71,6 @@ const CardList = () => {
 
       toggleClass: "activeCard",
       targets: q(".card"),
-      // scale: true,
     });
 
     return () => {
@@ -109,7 +106,6 @@ const CardList = () => {
         img3={data.img3}
         img4={data.img4}
         onClick={expand}
-        model={data.id === 0 ? <Closet /> : ""}
       ></Card>
     );
   });
