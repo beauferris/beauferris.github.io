@@ -37,8 +37,8 @@ const Card = ({
           >
             <h2>{title}</h2>
 
+            </div>
             <h4>{type}</h4>
-          </div>
         </div>
         <div className="content-wrapper">
           <div className="main-content">
